@@ -1,0 +1,1682 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renesas RA8P1 | Featured on Octopart</title>
+<meta name="description" content="Renesas RA8P1: a 1 GHz Arm Cortex-M85 with a 256 GOPS Ethos-U55 NPU. Get the EK-RA8P1, start from a reference design, and compare price and stock for every MPN on Octopart.">
+<!-- RA8P1 featured page, combined concept: hero and use cases from Option B, Evaluate from Option C, parts from Option B,
+     the original Renesas block diagram made clickable, and Design In rebuilt around the RA8P1 reference designs.
+     Add #review to the URL to open with review notes on. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Octopart design tokens (Octopart Templates Figma, Style Guide) */
+:root{
+  --blue-900:#18324E; --blue-700:#285483; --blue-600:#3671B0; --blue-500:#568FCA;
+  --blue-200:#CEDEF0; --blue-100:#E3E9F0;
+  --ink:#102133; /* #18324E darkened 35%, for dark stages */
+  --black:#000000; --grey-800:#333333; --grey-600:#666666; --grey-300:#E0E0E0; --grey-100:#F2F2F2;
+  --surface:#F0F0F0; --white:#FFFFFF;
+  --green:#2E654D; --green-mid:#4DA881; --green-pale:#B5DDCC; --mint:#DDF0E8;
+  --red:#B22113; --orange:#EB7114; --gold:#E2AF1D; --link:#0D52A1; --taupe:#B1A497;
+  --font:"Inter","Helvetica Neue",Arial,"Liberation Sans",sans-serif;
+  --container:1200px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font-family:var(--font);font-size:16px;line-height:1.4;color:var(--grey-800);background:var(--white);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg{display:block;max-width:100%}
+[hidden]{display:none!important}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px;border-radius:2px}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+.i{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:8px;background:var(--white);padding:8px 12px;z-index:999}
+.skip:focus{left:8px}
+sup{font-size:.62em;line-height:0;vertical-align:super;margin-left:2px}
+sup a{color:inherit;opacity:.8}
+
+/* Buttons: 4px radius, Inter Bold, 8px icon gap */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:4px;border:1px solid transparent;font:700 16px/22.4px var(--font);padding:12px 20px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background-color .15s,border-color .15s,color .15s}
+.btn:hover{text-decoration:none}
+.btn-sm{font-size:14px;line-height:19.6px;padding:6px 12px}
+.btn-primary{background:var(--blue-600);color:var(--white)}
+.btn-primary:hover{background:var(--blue-500)}
+.btn-primary:active{background:var(--blue-900)}
+.btn-secondary{background:var(--white);color:var(--blue-700);border-color:var(--blue-200)}
+.btn-secondary:hover{border-color:var(--blue-600);background:var(--blue-100)}
+.btn-ghost-dark{background:transparent;color:var(--white);border-color:rgba(255,255,255,.45)}
+.btn-ghost-dark:hover{background:rgba(255,255,255,.08);border-color:var(--white)}
+.btn-link{background:none;border:0;padding:0;color:var(--link);font:700 14px/19.6px var(--font);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.btn-link:hover{text-decoration:underline}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;line-height:16.8px;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pill-active{background:var(--mint);color:var(--green)}
+.pill-active::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green-mid)}
+.pill-outline{border:1px solid rgba(206,222,240,.5);color:var(--blue-200)}
+.pill-stock{background:var(--blue-100);color:var(--blue-700)}
+
+/* Octopart header */
+.op-header{background:var(--white);border-bottom:1px solid var(--grey-300)}
+.op-bar{display:flex;align-items:center;gap:28px;height:64px}
+.wordmark{font-weight:800;font-size:22px;letter-spacing:-.02em;color:var(--blue-700);text-decoration:none!important;flex:none}
+.op-search{flex:1;display:flex;max-width:620px}
+.op-search input{flex:1;min-width:0;height:40px;border:1px solid var(--grey-300);border-right:0;border-radius:4px 0 0 4px;padding:0 14px;font:14px var(--font);color:var(--grey-800)}
+.op-search input::placeholder{color:var(--grey-600)}
+.op-search button{border-radius:0 4px 4px 0;padding:0 16px;height:40px}
+.op-nav{display:flex;align-items:center;gap:20px;margin-left:auto;font-size:14px;font-weight:600}
+.op-nav a{color:var(--grey-800)}
+.op-nav .cur{color:var(--grey-600);font-weight:500;border:1px solid var(--grey-300);border-radius:4px;padding:5px 8px}
+
+/* Hero */
+.hero{background:var(--ink);color:var(--white);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 78% 40%,rgba(54,113,176,.38),transparent 70%);pointer-events:none}
+.hero .container{position:relative}
+.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:center;padding:64px 0 52px}
+.badges{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:22px}
+.chipbadge{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:15px;letter-spacing:.02em;color:var(--white);background:var(--blue-700);border:1px solid var(--blue-500);border-radius:4px;padding:5px 10px 5px 8px}
+.chipbadge .i{width:18px;height:18px;stroke:var(--blue-200)}
+.chipbadge.sm{font-size:13px;padding:3px 8px 3px 6px}
+.chipbadge.sm .i{width:15px;height:15px}
+.hero h1{font-size:56px;line-height:61.6px;letter-spacing:-.025em;margin:0 0 20px;color:var(--white)}
+.hero .sub{font-size:20px;line-height:28px;color:var(--blue-200);max-width:34em;margin:0}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.live{display:flex;align-items:center;gap:8px;margin:16px 0 0;font-size:14px;color:var(--blue-200)}
+.live .dot{width:8px;height:8px;border-radius:50%;background:var(--green-mid);box-shadow:0 0 0 3px rgba(77,168,129,.25)}
+.hero-art svg{width:100%;height:auto}
+.stats{border-top:1px solid rgba(206,222,240,.16);position:relative}
+.stats-grid{display:grid;grid-template-columns:repeat(5,1fr);margin:0;padding:0;list-style:none}
+.stats-grid li{padding:22px 20px 24px 0}
+.stats-grid li+li{padding-left:20px;border-left:1px solid rgba(206,222,240,.16)}
+.stats-grid strong{display:block;font-size:32px;line-height:35.2px;letter-spacing:-.02em;color:var(--white)}
+.stats-grid span{display:block;margin-top:4px;font-size:14px;line-height:19.6px;color:var(--blue-200)}
+
+/* Sticky product bar */
+.productbar{position:sticky;top:0;z-index:60;background:var(--white);border-bottom:1px solid var(--grey-300)}
+.pb-inner{display:flex;align-items:center;gap:20px;height:56px}
+.pb-title{display:flex;align-items:center;gap:8px;text-decoration:none!important;flex:none}
+.pb-title .mfr{font-size:14px;font-weight:600;color:var(--grey-600)}
+.pb-tabs{display:flex;gap:2px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
+.pb-tabs::-webkit-scrollbar{display:none}
+.pb-tabs a{display:block;padding:17px 10px 15px;font-size:14px;font-weight:600;color:var(--grey-600);border-bottom:2px solid transparent;white-space:nowrap;text-decoration:none}
+.pb-tabs a:hover{color:var(--blue-700)}
+.pb-tabs a.active{color:var(--blue-700);border-bottom-color:var(--blue-600)}
+.pb-actions{display:flex;align-items:center;gap:16px;flex:none}
+.pb-actions a{font-size:14px;font-weight:700}
+
+/* Sections */
+.section{padding:88px 0}
+.section.alt{background:var(--grey-100)}
+.section.tight{padding:56px 0}
+.eyebrow{font-size:12px;line-height:16.8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-600);margin:0 0 10px}
+h2.title{font-size:40px;line-height:44px;letter-spacing:-.02em;margin:0 0 12px;color:var(--blue-700)}
+.lede{font-size:18px;line-height:25.2px;color:var(--grey-600);max-width:40em;margin:0}
+.center{text-align:center}
+.center .lede{margin:0 auto}
+.h-sub{font-size:24px;line-height:26.4px;margin:0 0 20px;color:var(--blue-700)}
+.mini{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-600);margin:24px 0 10px}
+
+/* Use cases (Option B) */
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.uc-card{background:var(--ink);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.uc-art{height:184px;border-bottom:1px solid rgba(206,222,240,.1);background:linear-gradient(180deg,rgba(54,113,176,.16),rgba(54,113,176,0))}
+.uc-art svg{width:100%;height:100%}
+.uc-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.uc-body h3{font-size:24px;line-height:26.4px;margin:0 0 10px;color:var(--white)}
+.uc-body p{font-size:15px;line-height:21px;color:var(--blue-200);margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 22px;padding:0;list-style:none}
+.tags li{font-size:12px;line-height:16.8px;padding:4px 8px;border-radius:4px;background:rgba(206,222,240,.08);border:1px solid rgba(206,222,240,.16);color:var(--blue-100)}
+.uc-link{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:#8DB4DE}
+.uc-link:hover{color:var(--white)}
+
+/* System Overview: the original block diagram, simplified */
+.so-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:32px;margin-top:40px;align-items:start}
+.chip{position:relative;background:var(--white);border:2px solid var(--blue-700);border-radius:12px;padding:26px 18px 18px}
+.chip-label{position:absolute;top:-13px;left:18px;display:flex;align-items:center;gap:8px;background:var(--grey-100);padding:0 10px;font-weight:800;font-size:15px;color:var(--blue-700)}
+.chip-label small{font-weight:600;font-size:12px;color:var(--grey-600)}
+.chip-grid{display:grid;grid-template-columns:1.12fr 1fr 1fr;gap:14px}
+.chip-col{display:flex;flex-direction:column;gap:14px}
+.chip-col > .grp:last-child{flex:1}
+.chip-bottom{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.25fr 1.1fr;gap:14px}
+.grp{border:1px solid var(--grey-300);border-top:3px solid var(--acc);border-radius:6px;padding:10px;background:var(--white)}
+.grp h3{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px;line-height:16.8px;font-weight:700;color:var(--grey-800);margin:0 0 8px}
+.grp h3 span{font-weight:600;color:var(--grey-600)}
+.blocks{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.blk{appearance:none;display:block;width:100%;min-height:40px;border:1px solid var(--grey-300);background:var(--white);border-radius:4px;padding:6px 8px;font:600 12px/1.25 var(--font);color:var(--grey-800);text-align:left;cursor:pointer;transition:background-color .12s,border-color .12s}
+.blk small{display:block;margin-top:2px;font-size:11px;font-weight:500;color:var(--grey-600)}
+.blk.span{grid-column:span 2}
+.blk.big{min-height:54px;font-size:14px}
+.blk.big small{font-size:12px}
+.blk:hover{border-color:var(--blue-600);background:var(--blue-100)}
+.blk[aria-pressed="true"]{border-color:var(--blue-700);background:var(--blue-100);box-shadow:inset 3px 0 0 var(--acc)}
+.blk .mipi{display:inline-block;margin-left:4px;font-size:10px;font-weight:700;color:var(--blue-700);border:1px solid var(--blue-200);border-radius:3px;padding:0 3px;vertical-align:1px}
+.so-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:16px;font-size:14px;font-weight:700}
+.so-links a{display:inline-flex;align-items:center;gap:6px}
+.so-detail{position:sticky;top:76px;background:var(--white);border:1px solid var(--grey-300);border-radius:8px;padding:22px}
+.so-detail .dom{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--grey-600);margin:0 0 8px}
+.so-detail .dom i{width:10px;height:10px;border-radius:2px;background:var(--acc)}
+.so-detail h3{font-size:24px;line-height:26.4px;margin:0 0 4px;color:var(--blue-700)}
+.so-detail .spec{font-size:14px;color:var(--grey-600);margin:0 0 14px}
+.so-detail .desc{font-size:15px;line-height:21px;margin:0 0 16px}
+.figs{margin:0 0 16px;padding:0;border-top:1px solid var(--grey-300)}
+.figs div{display:grid;grid-template-columns:42% 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--grey-300);font-size:13px;line-height:18.2px}
+.figs dt{color:var(--grey-600);margin:0}
+.figs dd{margin:0;font-weight:600;color:var(--grey-800)}
+.so-detail .note{font-size:13px;line-height:18.2px;background:var(--blue-100);border-radius:4px;padding:10px 12px;margin:0 0 16px;color:var(--blue-900)}
+.so-detail .acts{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.so-detail .later{font-size:12px;color:var(--grey-600);margin:0}
+.so-detail .src{font-size:12px;color:var(--grey-600);margin:16px 0 0;padding-top:12px;border-top:1px solid var(--grey-300)}
+.so-detail .close{display:none}
+
+/* Get started strip */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--grey-300);border-radius:8px;overflow:hidden;margin-top:24px}
+.step{display:block;padding:20px 24px;color:inherit;text-decoration:none!important;border-right:1px solid var(--grey-300);transition:background-color .12s}
+.step:last-child{border-right:0}
+.step:hover{background:var(--blue-100)}
+.step .num{font-size:14px;font-weight:800;color:var(--blue-600)}
+.step h3{font-size:20px;line-height:28px;margin:2px 0 4px;color:var(--blue-700)}
+.step p{font-size:14px;line-height:19.6px;color:var(--grey-600);margin:0 0 10px}
+.step .jump{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--link)}
+
+/* Evaluate (Option C) */
+.eval-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;margin-top:40px;align-items:start}
+.kit-figure{margin:0;background:var(--grey-100);border:1px solid var(--grey-300);border-radius:8px;padding:44px 20px 20px;position:relative}
+.kit-figure .kit-label{position:absolute;top:14px;left:16px;font-size:12px;font-weight:700;color:var(--blue-700)}
+.kit-figure svg{width:100%;height:auto}
+.kit-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.kit-head h3{font-size:32px;line-height:35.2px;margin:0;color:var(--blue-700)}
+.mpn{font-size:14px;color:var(--grey-600);margin:6px 0 16px}
+.kit-desc{font-size:16px;line-height:22.4px;margin:0}
+.buyrow{display:flex;flex-wrap:wrap;align-items:center;gap:16px 20px;margin:22px 0;padding:18px 20px;background:var(--blue-100);border:1px solid var(--blue-200);border-radius:8px}
+.buyrow .from{font-size:14px;line-height:19.6px;color:var(--grey-800)}
+.buyrow .from strong{font-size:20px;line-height:28px;color:var(--blue-900)}
+.buyrow .from span{display:block;color:var(--grey-600)}
+.doclinks{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0;padding:0;list-style:none;font-size:14px;font-weight:700}
+.doclinks a{display:inline-flex;align-items:center;gap:6px}
+.features{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.features li{font-size:13px;line-height:18.2px;padding:6px 10px;border:1px solid var(--grey-300);border-radius:4px;background:var(--white)}
+.inbox{font-size:14px;line-height:19.6px;color:var(--grey-600);margin:16px 0 0}
+.inbox strong{color:var(--grey-800)}
+.projects{margin-top:40px;border:1px solid var(--grey-300);border-radius:8px;overflow:hidden}
+.proj-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;padding:16px 20px;background:var(--grey-100);border-bottom:1px solid var(--grey-300)}
+.proj-head h3{font-size:18px;line-height:25.2px;margin:0;color:var(--blue-700)}
+.proj-head p{margin:0;font-size:14px;color:var(--grey-600)}
+.proj-head a{margin-left:auto;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:6px}
+.proj-list{display:grid;grid-template-columns:1fr 1fr;margin:0;padding:0;list-style:none}
+.proj-list li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;border-top:1px solid var(--grey-300)}
+.proj-list li:nth-child(-n+2){border-top:0}
+.proj-list li:nth-child(odd){border-right:1px solid var(--grey-300)}
+.proj-list strong{display:block;font-size:15px}
+.proj-list span{font-size:13px;color:var(--grey-600)}
+
+/* Buy dropdown (Tom, point 1) */
+.buypop{position:fixed;z-index:400;width:420px;max-width:calc(100vw - 24px);background:var(--white);color:var(--grey-800);border:1px solid var(--grey-300);border-radius:8px;box-shadow:0 14px 36px rgba(16,33,51,.24);display:none}
+.buypop.open{display:block}
+.buypop-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:14px 16px 12px;border-bottom:1px solid var(--grey-300)}
+.buypop-head h4{font-size:16px;line-height:22.4px;margin:0;color:var(--blue-900)}
+.buypop-head p{font-size:12px;margin:2px 0 0;color:var(--grey-600)}
+.iconbtn{appearance:none;border:0;background:none;padding:4px;border-radius:4px;color:var(--grey-600);cursor:pointer}
+.iconbtn:hover{background:var(--grey-100);color:var(--grey-800)}
+.buypop table{width:100%;border-collapse:collapse;font-size:14px}
+.buypop th{white-space:nowrap;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--grey-600);text-align:left;padding:8px 16px 6px}
+.buypop th.r,.buypop td.r{text-align:right}
+.buypop td{padding:9px 16px;border-top:1px solid var(--grey-100);vertical-align:middle}
+.buypop .dist{font-weight:700;white-space:nowrap}
+.buypop .low{display:block;font-size:11px;font-weight:700;color:var(--green)}
+.buypop .stock{color:var(--green);font-weight:600}
+.buypop .price{font-weight:700}
+.buypop-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:10px 16px 12px;border-top:1px solid var(--grey-300);font-size:12px;color:var(--grey-600)}
+.buypop-foot a{font-weight:700;display:inline-flex;align-items:center;gap:4px}
+
+/* Design In stage: the highlight (Tom, point 2) */
+.stage{background:var(--blue-900);color:var(--white);padding:88px 0}
+.stage .eyebrow{color:#8DB4DE}
+.stage h2.title{color:var(--white)}
+.stage .lede{color:var(--blue-200)}
+.sol-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:36px 0 18px}
+.sol-tab{appearance:none;text-align:left;border:1px solid rgba(206,222,240,.22);background:rgba(255,255,255,.04);color:var(--blue-100);border-radius:6px;padding:12px 14px;cursor:pointer;font:700 15px/1.3 var(--font);transition:background-color .12s,border-color .12s}
+.sol-tab small{display:block;margin-top:4px;font-weight:500;font-size:12px;color:var(--blue-200)}
+.sol-tab:hover{border-color:var(--blue-500);background:rgba(255,255,255,.08)}
+.sol-tab[aria-selected="true"]{background:var(--white);border-color:var(--white);color:var(--blue-900)}
+.sol-tab[aria-selected="true"] small{color:var(--grey-600)}
+.viewer{display:grid;grid-template-columns:minmax(0,2fr) minmax(320px,1fr);border:1px solid rgba(206,222,240,.2);border-radius:10px;overflow:hidden;background:var(--ink)}
+.viewer-bar{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;padding:12px 16px;border-bottom:1px solid rgba(206,222,240,.16)}
+.viewer-bar .vt strong{display:block;font-size:15px}
+.viewer-bar .vt span{font-size:12px;color:var(--blue-200)}
+.viewer-bar .vl{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;font-weight:700}
+.viewer-bar .vl a{color:#8DB4DE;display:inline-flex;align-items:center;gap:5px}
+.viewer-bar .vl a:hover{color:var(--white)}
+.canvas{position:relative;padding:14px 14px 10px;background-color:var(--ink);background-image:linear-gradient(rgba(206,222,240,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(206,222,240,.05) 1px,transparent 1px);background-size:24px 24px}
+.canvas svg{width:100%;height:auto}
+.canvas-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:center;padding:6px 4px 0;font-size:12px;color:var(--blue-200)}
+.legend{display:flex;gap:14px;align-items:center}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:18px;height:10px;border-radius:2px}
+.legend .lp{background:rgba(86,143,202,.25);border:1px solid var(--blue-500)}
+.legend .le{border:1px dashed rgba(206,222,240,.6)}
+.sel-info{margin:0;min-height:17px}
+.node{cursor:pointer}
+.node rect{transition:stroke .12s,fill .12s}
+.node.part rect{fill:rgba(86,143,202,.16);stroke:var(--blue-500);stroke-width:1.2}
+.node.ext rect{fill:rgba(16,33,51,.6);stroke:rgba(206,222,240,.55);stroke-width:1;stroke-dasharray:4 3}
+.node.mcu rect{fill:var(--blue-700);stroke:var(--blue-200);stroke-width:1.5}
+.node text{fill:var(--white);font-family:var(--font);font-weight:700}
+.node text.s{fill:var(--blue-200);font-weight:500}
+.node:hover rect,.node:focus-visible rect{stroke:var(--white)}
+.node.on rect{stroke:var(--white);stroke-width:2;fill:rgba(255,255,255,.14)}
+.node.mcu.on rect{fill:var(--blue-600)}
+.node:focus{outline:none}
+.edge{stroke:rgba(206,222,240,.45);stroke-width:1.2;fill:none}
+.edge.on{stroke:var(--white);stroke-width:1.8}
+.elabel{fill:var(--blue-200);font-size:10px;font-family:var(--font);font-weight:600}
+.bom{background:var(--white);color:var(--grey-800);display:flex;flex-direction:column;min-width:0}
+.bom-head{padding:16px 18px 12px;border-bottom:1px solid var(--grey-300)}
+.bom-head h3{font-size:16px;line-height:22.4px;margin:0;color:var(--blue-900)}
+.bom-head p{margin:2px 0 0;font-size:12px;color:var(--grey-600)}
+.bom-list{list-style:none;margin:0;padding:0;overflow:auto;max-height:430px}
+.bom-row{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;align-items:center;padding:11px 18px;border-bottom:1px solid var(--grey-100);cursor:pointer;transition:background-color .12s}
+.bom-row:hover{background:var(--grey-100)}
+.bom-row.hl{background:var(--blue-100)}
+.bom-row .idx{font-size:12px;font-weight:700;color:var(--grey-600)}
+.bom-row strong{font-size:14px;color:var(--blue-900)}
+.bom-row .role{font-size:12px;font-weight:600;color:var(--blue-600);margin-left:6px}
+.bom-row .qty{font-size:12px;font-weight:700;color:var(--grey-600);margin-left:6px}
+.bom-row small{display:block;font-size:12px;line-height:16.8px;color:var(--grey-600)}
+.bom-row.off strong{color:var(--grey-600)}
+.bom-ext{padding:10px 18px;font-size:12px;line-height:16.8px;color:var(--grey-600)}
+.bom-foot{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;padding:12px 18px;border-top:1px solid var(--grey-300)}
+.proto-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;margin-top:20px;padding:16px 20px;border:1px solid rgba(206,222,240,.22);border-radius:8px;background:rgba(255,255,255,.04)}
+.proto-bar strong{display:block;font-size:16px}
+.proto-bar span{font-size:14px;color:var(--blue-200)}
+
+/* Source (Option B) */
+.picks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 22px}
+.pick{appearance:none;text-align:left;background:var(--white);border:1px solid var(--grey-300);border-radius:8px;padding:14px 16px;cursor:pointer;font:inherit;color:inherit;transition:border-color .12s}
+.pick:hover{border-color:var(--blue-600)}
+.pick .k{display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-600)}
+.pick .v{display:block;font-size:16px;font-weight:700;color:var(--blue-700);margin:6px 0 2px}
+.pick .s{display:block;font-size:13px;color:var(--grey-600)}
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;padding:12px 0;border-top:1px solid var(--grey-300);border-bottom:1px solid var(--grey-300)}
+.fchip{appearance:none;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--grey-300);background:var(--white);border-radius:999px;padding:6px 12px;font:600 13px var(--font);color:var(--grey-800);cursor:pointer}
+.fchip[aria-pressed="true"]{background:var(--blue-100);border-color:var(--blue-600);color:var(--blue-900)}
+.fsel{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--grey-600)}
+.fsel select{height:32px;border:1px solid var(--grey-300);border-radius:4px;padding:0 8px;font:13px var(--font);color:var(--grey-800);background:var(--white)}
+.fcount{margin-left:auto;font-size:13px;font-weight:700;color:var(--grey-600)}
+.table-wrap{overflow-x:auto;margin-top:6px}
+table.parts{width:100%;min-width:1060px;border-collapse:collapse;font-size:14px}
+.parts th{font-size:12px;font-weight:700;text-align:left;color:var(--grey-600);padding:12px 8px 8px;border-bottom:1px solid var(--grey-300);white-space:nowrap}
+.parts td{padding:12px 8px;border-bottom:1px solid var(--grey-100);vertical-align:middle}
+.parts tr{transition:background-color .3s}
+.parts tr.flash td{background:var(--blue-100)}
+.parts .partcell{display:flex;align-items:center;gap:10px}
+.parts .partcell svg{width:30px;height:30px;flex:none}
+.parts .partcell a{font-weight:700}
+.parts .partcell small{display:block;font-size:12px;color:var(--grey-600)}
+.avail b{display:block;font-size:14px;color:var(--green)}
+.bar{display:block;width:96px;height:4px;margin-top:5px;background:var(--grey-100);border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--green-mid)}
+.parts .dim{display:block;font-size:12px;color:var(--grey-600)}
+.yes{color:var(--green);font-weight:700}
+.no{color:var(--grey-600)}
+.parts input[type=checkbox]{width:16px;height:16px;accent-color:var(--blue-600)}
+.tray{position:sticky;bottom:16px;z-index:20;display:none;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin-top:14px;padding:12px 16px;background:var(--blue-900);color:var(--white);border-radius:8px;box-shadow:0 10px 28px rgba(16,33,51,.25)}
+.tray.show{display:flex}
+.tray p{margin:0;font-size:14px}
+.tray .acts{display:flex;gap:8px}
+.data-note{font-size:13px;color:var(--grey-600);margin:14px 0 0}
+.data-note a{font-weight:700;margin-left:6px}
+.nudge,.cad-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;padding:16px 20px;border-radius:8px;margin-top:20px}
+.nudge{background:var(--blue-100);border:1px solid var(--blue-200)}
+.cad-row{border:1px solid var(--grey-300)}
+.nudge p,.cad-row p{margin:0;font-size:15px}
+.cad-row p span{display:block;font-size:13px;color:var(--grey-600)}
+
+/* Resources, distributors, FAQ */
+.rtabs{display:flex;gap:4px;border-bottom:1px solid var(--grey-300);margin:32px 0 24px;overflow-x:auto}
+.rtab{appearance:none;background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:10px 14px;font:700 14px var(--font);color:var(--grey-600);cursor:pointer;white-space:nowrap}
+.rtab[aria-selected="true"]{color:var(--blue-700);border-bottom-color:var(--blue-600)}
+.docs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.doc{display:flex;flex-direction:column;gap:8px;background:var(--white);border:1px solid var(--grey-300);border-radius:8px;padding:18px}
+.doc .type{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-600)}
+.doc h4{font-size:16px;line-height:22.4px;margin:0;color:var(--grey-800)}
+.doc p{font-size:14px;line-height:19.6px;color:var(--grey-600);margin:0}
+.doc .meta{margin-top:auto;padding-top:8px;font-size:12px;color:var(--grey-600)}
+.doc a.dl{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700}
+.dist-strip{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:48px;padding:20px 0;border-top:1px solid var(--grey-300);border-bottom:1px solid var(--grey-300)}
+.dist-strip > span{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-600)}
+.dist-strip ul{display:flex;flex-wrap:wrap;gap:10px 28px;margin:0;padding:0;list-style:none;font-size:17px;font-weight:700;color:var(--grey-800)}
+.faq{margin-top:48px}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.faq details{border-bottom:1px solid var(--grey-300);padding:14px 0}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:700;color:var(--grey-800)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:400;font-size:20px;line-height:20px;color:var(--blue-600)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:10px 0 0;font-size:15px;line-height:21px;color:var(--grey-800)}
+
+/* Closing band */
+.closing{background:var(--ink);color:var(--white);padding:56px 0}
+.closing-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px}
+.closing h2{font-size:32px;line-height:35.2px;margin:0 0 6px;color:var(--white)}
+.closing p{margin:0;font-size:16px;color:var(--blue-200)}
+.closing .ctas{margin-top:0}
+
+/* Sources and notes */
+.sources{background:var(--grey-100);padding:40px 0;border-top:1px solid var(--grey-300)}
+.sources h2{font-size:16px;line-height:22.4px;margin:0 0 10px;color:var(--grey-800)}
+.sources ol{margin:0;padding-left:20px;font-size:13px;line-height:19px;color:var(--grey-600);columns:2;column-gap:40px}
+.sources li{break-inside:avoid;margin-bottom:6px}
+
+/* Octopart footer */
+.op-footer{background:var(--white);border-top:1px solid var(--grey-300);padding:48px 0 32px;font-size:14px}
+.f-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:24px}
+.f-grid h4{font-size:14px;margin:0 0 10px;color:var(--grey-800)}
+.f-grid ul{margin:0;padding:0;list-style:none}
+.f-grid li{margin:0 0 8px}
+.f-grid a{color:var(--grey-600)}
+.f-grid a.wordmark{color:var(--blue-700)}
+.f-grid a.btn{color:var(--blue-700)}
+.f-news p{color:var(--grey-600);margin:6px 0 12px;max-width:26em}
+.f-legal{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:32px;padding-top:20px;border-top:1px solid var(--grey-300);font-size:12px;color:var(--grey-600)}
+.f-legal a{color:var(--grey-600)}
+
+/* Mobile kit bar */
+.mobilebar{display:none}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);opacity:0;pointer-events:none;z-index:600;max-width:min(560px,calc(100vw - 32px));background:var(--blue-900);color:var(--white);font-size:14px;line-height:19.6px;padding:12px 16px;border-radius:8px;box-shadow:0 10px 28px rgba(16,33,51,.3);transition:opacity .18s,transform .18s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* Review notes (off by default; Show Review Notes or #review turns them on) */
+.rv{display:none}
+body.review .rv{display:block}
+body.review .rv-tag{display:inline-flex}
+.rv-tag{align-items:center;gap:6px;font-size:12px;line-height:16.8px;font-weight:700;color:var(--blue-900);background:var(--white);border:1.5px solid var(--blue-600);border-radius:4px;padding:4px 9px;margin:0 0 18px}
+.rv-tag::before{content:"Review";font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--white);background:var(--blue-600);border-radius:2px;padding:1px 5px}
+.rv-box{font-size:13px;line-height:19px;color:var(--blue-900);background:var(--blue-100);border:1.5px solid var(--blue-600);border-radius:6px;padding:12px 14px;margin:20px auto 0;max-width:820px;text-align:left}
+.rv-box strong{display:block;margin-bottom:4px}
+.rv-box p{margin:0 0 6px}
+.rv-box p:last-child{margin:0}
+.rv-ctl{position:fixed;left:16px;bottom:16px;z-index:500;display:flex;gap:8px}
+.rv-ctl button{appearance:none;border:1px solid var(--blue-600);background:var(--white);color:var(--blue-700);font:700 13px var(--font);border-radius:999px;padding:8px 14px;cursor:pointer;box-shadow:0 6px 18px rgba(16,33,51,.18)}
+.rv-ctl button[aria-pressed="true"]{background:var(--blue-600);color:var(--white)}
+.rv-ctl #rv-open{display:none}
+body.review .rv-ctl #rv-open{display:inline-block}
+body.review.rvp .rv-ctl #rv-open{display:none}
+.rv-panel{position:fixed;top:0;right:0;z-index:550;width:min(460px,100vw);height:100vh;overflow:auto;background:var(--white);border-left:1px solid var(--grey-300);box-shadow:-14px 0 36px rgba(16,33,51,.18);padding:22px 24px 32px;transform:translateX(105%);transition:transform .2s}
+.rv-panel.open{transform:none}
+.rv-panel header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px}
+.rv-panel h2{font-size:20px;line-height:28px;margin:0;color:var(--blue-700)}
+.rv-panel h3{font-size:14px;margin:20px 0 8px;color:var(--grey-800)}
+.rv-panel p,.rv-panel li{font-size:13px;line-height:19px;color:var(--grey-800)}
+.rv-panel ul{margin:0;padding-left:18px}
+.rv-panel li{margin-bottom:6px}
+.rv-panel .lead{color:var(--grey-600);margin:0}
+
+/* Responsive */
+@media (max-width:1100px){
+  .so-layout{grid-template-columns:1fr}
+  .so-detail{position:static}
+  .docs{grid-template-columns:repeat(2,1fr)}
+  .viewer{grid-template-columns:1fr}
+  .bom-list{max-height:none}
+  .stats-grid{grid-template-columns:repeat(3,1fr)}
+  .stats-grid li:nth-child(4){border-left:0;padding-left:0}
+}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:12px;padding-top:44px}
+  .hero-art{max-width:380px;margin:0 auto;order:-1}
+  .hero h1{font-size:40px;line-height:44px}
+  .hero .sub{font-size:18px;line-height:25.2px}
+  .pb-actions .pb-compare{display:none}
+  .uc-grid{grid-template-columns:1fr}
+  .chip-grid{grid-template-columns:1fr}
+  .chip-bottom{grid-template-columns:1fr}
+  .eval-grid{grid-template-columns:1fr;gap:28px}
+  .sol-tabs{grid-template-columns:repeat(2,1fr)}
+  .picks{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .step{border-right:0;border-bottom:1px solid var(--grey-300)}
+  .step:last-child{border-bottom:0}
+  .proj-list{grid-template-columns:1fr}
+  .proj-list li{border-right:0!important}
+  .proj-list li:nth-child(2){border-top:1px solid var(--grey-300)}
+  .faq-grid{grid-template-columns:1fr}
+  .sources ol{columns:1}
+  .f-grid{grid-template-columns:repeat(2,1fr)}
+  .so-detail{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:450;max-height:62vh;overflow:auto;border-radius:12px 12px 0 0;box-shadow:0 -12px 32px rgba(16,33,51,.22);transform:translateY(105%);transition:transform .2s}
+  .so-detail.sheet-open{transform:none}
+  .so-detail .close{display:block;position:absolute;top:12px;right:12px}
+}
+@media (max-width:760px){
+  .container{padding:0 16px}
+  .op-search{display:none}
+  .op-nav{gap:14px}
+  .section{padding:64px 0}
+  .stage{padding:64px 0}
+  h2.title{font-size:32px;line-height:35.2px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid li{padding:16px 12px 16px 0!important;border-left:0!important}
+  .stats-grid strong{font-size:26px;line-height:30px}
+  .pb-title .mfr{display:none}
+  .pb-actions{display:none}
+  .docs{grid-template-columns:1fr}
+  .sol-tabs{grid-template-columns:1fr}
+  .picks{grid-template-columns:1fr 1fr}
+  .buypop th,.buypop td{padding-left:10px;padding-right:10px}
+  .buypop .dist{white-space:normal}
+  .buypop td .i{display:none}
+  .mobilebar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:420;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:var(--white);border-top:1px solid var(--grey-300);box-shadow:0 -6px 18px rgba(16,33,51,.12)}
+  .mobilebar p{margin:0;font-size:13px;line-height:18px;color:var(--grey-600)}
+  .mobilebar strong{display:block;font-size:15px;color:var(--blue-900)}
+  body{padding-bottom:68px}
+  .rv-ctl{bottom:78px;left:auto;right:12px}
+  .rv-ctl button{font-size:12px;padding:6px 10px}
+  .toast{bottom:84px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ext" viewBox="0 0 16 16"><path d="M9.5 2.5h4v4M13.5 2.5 7.5 8.5M12 9.5v4H2.5V4h4"/></symbol>
+  <symbol id="i-down" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4"/></symbol>
+  <symbol id="i-right" viewBox="0 0 16 16"><path d="M6 3.5 10.5 8 6 12.5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 16 16"><path d="M4 1.8h5.2L12.5 5v9.2H4zM9 1.8V5h3.5M6 8.2h4.5M6 10.8h4.5"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 16 16"><path d="M8 2v8.5M4.8 7.4 8 10.6l3.2-3.2M2.5 13.5h11"/></symbol>
+  <symbol id="i-play" viewBox="0 0 16 16"><path d="M5 3.2v9.6L12.4 8z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 20 20"><rect x="5" y="5" width="10" height="10" rx="1.5"/><path d="M8 2v3M12 2v3M8 15v3M12 15v3M2 8h3M2 12h3M15 8h3M15 12h3"/></symbol>
+  <symbol id="i-git" viewBox="0 0 16 16"><circle cx="4.5" cy="3.5" r="1.6"/><circle cx="4.5" cy="12.5" r="1.6"/><circle cx="11.5" cy="5.5" r="1.6"/><path d="M4.5 5.1v5.8M11.5 7.1c0 2.4-2.2 2.9-7 3.8"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="op-header">
+  <div class="container op-bar">
+    <a class="wordmark" href="https://octopart.com/" aria-label="Octopart home">Octopart</a>
+    <div class="op-search" role="search">
+      <label class="sr-only" for="op-q">Search Octopart</label>
+      <input id="op-q" type="search" placeholder="Search by keywords, tech specs, part number, or anything else" autocomplete="off">
+      <button class="btn btn-primary" id="op-go" type="button">Search</button>
+    </div>
+    <nav class="op-nav" aria-label="Account">
+      <a href="https://octopart.com/" data-proto="Sign Up opens Octopart registration on the live site.">Sign Up</a>
+      <a href="https://octopart.com/" data-proto="Sign In opens the Octopart sign-in on the live site.">Sign In</a>
+      <span class="cur">USD</span>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO: Option B -->
+<section class="hero" id="overview" aria-labelledby="hero-title">
+  <div class="container">
+    <p class="rv rv-tag" style="margin-top:20px">Hero: Option B. Badge above the headline, Get the Eval Kit, stat band with sources.</p>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="badges">
+          <span class="chipbadge"><svg class="i"><use href="#i-chip"/></svg>RA8P1</span>
+          <span class="pill pill-active">Active</span>
+          <span class="pill pill-outline">Featured by Renesas</span>
+        </div>
+        <h1 id="hero-title">Voice. Vision. Analytics.<br>One MCU.</h1>
+        <p class="sub">Renesas RA8P1 pairs a 1 GHz Arm Cortex-M85 with a 256 GOPS Ethos-U55 NPU on 22 nm ULL, so inference runs next to the sensor without a separate AI processor.<sup><a href="#src-1">1</a></sup></p>
+        <div class="ctas">
+          <button class="btn btn-primary" type="button" data-buy="hero" aria-haspopup="dialog" aria-expanded="false" aria-controls="buypop">Get the Eval Kit <svg class="i"><use href="#i-down"/></svg></button>
+          <a class="btn btn-ghost-dark" href="https://www.renesas.com/en/products/ra8p1?tab=videos" target="_blank" rel="noopener"><svg class="i"><use href="#i-play"/></svg>Watch the Overview</a>
+        </div>
+        <p class="live"><span class="dot" aria-hidden="true"></span>EK-RA8P1 in stock at 5 distributors, from $183.00<sup><a href="#src-6">6</a></sup></p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 460 400" role="presentation">
+          <defs>
+            <linearGradient id="pkg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#2A527D"/><stop offset=".55" stop-color="#18324E"/><stop offset="1" stop-color="#0B1826"/>
+            </linearGradient>
+            <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity=".22"/><stop offset=".45" stop-color="#FFFFFF" stop-opacity="0"/>
+            </linearGradient>
+            <radialGradient id="halo" cx=".5" cy=".5" r=".5">
+              <stop offset="0" stop-color="#568FCA" stop-opacity=".45"/><stop offset="1" stop-color="#568FCA" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="230" cy="200" r="190" fill="url(#halo)"/>
+          <g id="traces" stroke="#568FCA" stroke-opacity=".55" stroke-width="1.4" fill="none"></g>
+          <rect x="112" y="82" width="236" height="236" rx="16" fill="#060F18" opacity=".55" transform="translate(6 10)"/>
+          <rect x="112" y="82" width="236" height="236" rx="16" fill="url(#pkg)" stroke="#568FCA" stroke-opacity=".6"/>
+          <rect x="148" y="118" width="164" height="164" rx="8" fill="none" stroke="#CEDEF0" stroke-opacity=".16"/>
+          <circle cx="134" cy="104" r="6" fill="#CEDEF0" fill-opacity=".45"/>
+          <text x="230" y="206" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="42" font-weight="800" fill="#E3E9F0" letter-spacing="1">RA8P1</text>
+          <text x="230" y="234" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="600" fill="#CEDEF0" fill-opacity=".7" letter-spacing="2">R7KA8P1KFLCAC</text>
+          <text x="230" y="256" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="600" fill="#568FCA">Cortex-M85 + Ethos-U55</text>
+          <path d="M112 98a16 16 0 0 1 16-16h118L112 216z" fill="url(#sheen)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="container">
+      <ul class="stats-grid" aria-label="Key RA8P1 figures">
+        <li><strong>1 GHz</strong><span>Arm Cortex-M85 with Helium</span></li>
+        <li><strong>256 GOPS</strong><span>Ethos-U55 NPU</span></li>
+        <li><strong>7,300+</strong><span>CoreMark</span></li>
+        <li><strong>2 MB</strong><span>SRAM including TCM</span></li>
+        <li><strong>22 nm<sup><a href="#src-1">1</a></sup></strong><span>ULL process</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY PRODUCT BAR: Option B -->
+<nav class="productbar" id="productbar" aria-label="RA8P1 page sections">
+  <div class="container pb-inner">
+    <a class="pb-title" href="#overview"><span class="chipbadge sm"><svg class="i"><use href="#i-chip"/></svg>RA8P1</span><span class="mfr">Renesas</span></a>
+    <div class="pb-tabs">
+      <a href="#overview" data-spy="overview">Overview</a>
+      <a href="#use-cases" data-spy="use-cases">Use Cases</a>
+      <a href="#system-overview" data-spy="system-overview">System Overview</a>
+      <a href="#evaluate" data-spy="evaluate">Evaluate</a>
+      <a href="#design-in" data-spy="design-in">Design In</a>
+      <a href="#source" data-spy="source">Source</a>
+      <a href="#resources" data-spy="resources">Resources</a>
+    </div>
+    <div class="pb-actions">
+      <a class="pb-compare" href="https://octopart.com/search?q=R7KA8P1" target="_blank" rel="noopener">Compare Price and Stock</a>
+      <button class="btn btn-primary btn-sm" type="button" data-buy="sticky-bar" aria-haspopup="dialog" aria-expanded="false" aria-controls="buypop">Get the Eval Kit</button>
+    </div>
+  </div>
+</nav>
+
+<!-- USE CASES: Option B -->
+<section class="section" id="use-cases" aria-labelledby="uc-title">
+  <div class="container">
+    <p class="rv rv-tag">Use Cases: Option B. Subtitle no longer promises a block lens (Tom, point 3). Each card now opens a real RA8P1 reference design.</p>
+    <div class="center">
+      <p class="eyebrow">Use Cases</p>
+      <h2 class="title" id="uc-title">Built for AI at the Edge</h2>
+      <p class="lede">Three workloads the Ethos-U55 NPU and Cortex-M85 handle on one chip. Each links to a Renesas reference design you can open below.<sup><a href="#src-2">2</a></sup></p>
+    </div>
+    <div class="rv rv-box">
+      <strong>For the blue boxes: where the Voice, Vision and Analytics copy comes from</strong>
+      <p>The three-way split is Renesas's own positioning. The RA8P1 product page describes the chip as enabling "voice, vision, and real-time analytics AI applications" (source 1), and the launch release highlights peripherals for vision and voice AI plus real-time analytics (source 2).</p>
+      <p>Voice: I2S and PDM interfaces for voice AI (source 1), keyword spotting in Renesas's published NPU benchmarks, and the Audio Noise Suppression project already on the current page. Vision: parallel and MIPI CSI-2 camera interfaces (source 1) and the face detection example for EK-RA8P1. Analytics: predictive maintenance is on Renesas's RA8P1 application list (source 1). Wording is ours and open to change.</p>
+    </div>
+    <div class="uc-grid">
+      <article class="uc-card">
+        <div class="uc-art"><svg id="art-voice" viewBox="0 0 360 184" aria-hidden="true"></svg></div>
+        <div class="uc-body">
+          <h3>Voice AI</h3>
+          <p>Wake word, command recognition and noise suppression, running locally on the MCU.</p>
+          <ul class="tags"><li>I2S and PDM</li><li>Ethos-U55 NPU</li><li>Helium DSP</li></ul>
+          <a class="uc-link" href="#design-in" data-solution="vc">Video Conferencing Camera Design <svg class="i"><use href="#i-right"/></svg></a>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="uc-art"><svg id="art-vision" viewBox="0 0 360 184" aria-hidden="true"></svg></div>
+        <div class="uc-body">
+          <h3>Vision AI</h3>
+          <p>Object detection and face recognition from a MIPI CSI-2 camera, with results on a MIPI DSI display.</p>
+          <ul class="tags"><li>MIPI CSI-2</li><li>2D Drawing Engine</li><li>Ethos-U55 NPU</li></ul>
+          <a class="uc-link" href="#design-in" data-solution="surv">Surveillance Camera Design <svg class="i"><use href="#i-right"/></svg></a>
+        </div>
+      </article>
+      <article class="uc-card">
+        <div class="uc-art"><svg id="art-analytics" viewBox="0 0 360 184" aria-hidden="true"></svg></div>
+        <div class="uc-body">
+          <h3>Real-Time Analytics</h3>
+          <p>Predictive maintenance and anomaly detection at the sensor, with no round trip to the cloud.</p>
+          <ul class="tags"><li>16-bit ADC</li><li>Helium MVE</li><li>GbE with TSN</li></ul>
+          <a class="uc-link" href="#design-in" data-solution="pdm">Predictive Maintenance Design <svg class="i"><use href="#i-right"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM OVERVIEW: the original Renesas diagram, simplified -->
+<section class="section alt" id="system-overview" aria-labelledby="so-title">
+  <div class="container">
+    <p class="rv rv-tag">System Overview: the original Renesas block diagram, simplified, contrast fixed. Click a block to read its description (Tom, point 3). No use-case mapping.</p>
+    <p class="eyebrow">System Overview</p>
+    <h2 class="title" id="so-title">A Complete View of RA8P1</h2>
+    <p class="lede">The Renesas block diagram, with every block clickable. Select a block to see what it does and its key figures.<sup><a href="#src-3">3</a></sup></p>
+    <div class="so-layout">
+      <div class="so-diagram">
+        <div class="chip" role="group" aria-label="RA8P1 block diagram">
+          <span class="chip-label">RA8P1 <small>64 blocks in 9 groups</small></span>
+          <div class="chip-grid" id="chip-grid"></div>
+        </div>
+        <div class="so-links">
+          <a href="https://www.renesas.com/sites/default/files/ra8p1-block-diagram_0.png" target="_blank" rel="noopener"><svg class="i"><use href="#i-dl"/></svg>Download Block Diagram</a>
+          <a href="#design-in"><svg class="i"><use href="#i-right"/></svg>Reference Designs Using RA8P1</a>
+          <a href="https://www.renesas.com/en/products/ra8p1?tab=documentation" target="_blank" rel="noopener"><svg class="i"><use href="#i-doc"/></svg>Application Notes and Documents</a>
+        </div>
+      </div>
+      <aside class="so-detail" id="so-detail" aria-live="polite" aria-label="Selected block"></aside>
+    </div>
+  </div>
+</section>
+
+<!-- GET STARTED STRIP: Option B -->
+<section class="section tight" id="get-started" aria-labelledby="gs-title">
+  <div class="container">
+    <p class="eyebrow">Get Started</p>
+    <h2 class="h-sub" id="gs-title">From Evaluation to Production</h2>
+    <div class="steps">
+      <a class="step" href="#evaluate"><span class="num">01</span><h3>Evaluate</h3><p>EK-RA8P1 from $183.00 at 5 distributors</p><span class="jump">Jump to Step <svg class="i"><use href="#i-right"/></svg></span></a>
+      <a class="step" href="#design-in"><span class="num">02</span><h3>Design In</h3><p>Renesas reference designs with sourced BOMs</p><span class="jump">Jump to Step <svg class="i"><use href="#i-right"/></svg></span></a>
+      <a class="step" href="#source"><span class="num">03</span><h3>Source</h3><p>Active, in-stock MPNs in the part family</p><span class="jump">Jump to Step <svg class="i"><use href="#i-right"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- EVALUATE: Option C, with Tom's Buy dropdown -->
+<section class="section" id="evaluate" aria-labelledby="ev-title" style="padding-top:24px">
+  <div class="container">
+    <p class="rv rv-tag">Evaluate: Option C (kit, documents, features, software projects, neutral wording). Tom's Buy dropdown (point 1) replaces the offers table.</p>
+    <p class="eyebrow">01 Evaluate</p>
+    <h2 class="title" id="ev-title">Evaluation Kit</h2>
+    <p class="lede">Begin building with the official kit. Compare every authorized offer, then buy at the distributor.</p>
+    <div class="eval-grid">
+      <figure class="kit-figure">
+        <span class="kit-label">Renesas Official Evaluation Kit</span>
+        <svg id="kit-art" viewBox="0 0 520 340" role="img" aria-label="Illustration of the EK-RA8P1 board and its main connectors"></svg>
+        <figcaption class="rv" style="font-size:12px;color:#18324E;margin-top:10px">Placeholder drawing. Swap in the original EK-RA8P1 photo from the current page.</figcaption>
+      </figure>
+      <div class="kit-info">
+        <div class="kit-head"><h3>EK-RA8P1</h3><span class="pill pill-active">Active</span><span class="pill pill-stock">In Stock</span></div>
+        <p class="mpn">RTK7EKA8P1S01001BE</p>
+        <p class="kit-desc">Full RA8P1 silicon with every peripheral broken out: camera, display, Ethernet and audio. The kit ships with a 7-inch touch display, a 5 MP camera module and preloaded demos.<sup><a href="#src-4">4</a></sup></p>
+        <div class="buyrow">
+          <button class="btn btn-primary" type="button" data-buy="evaluate" aria-haspopup="dialog" aria-expanded="false" aria-controls="buypop">Buy <svg class="i"><use href="#i-down"/></svg></button>
+          <p class="from" style="margin:0"><strong>From $183.00</strong> at 5 authorized distributors<span>Octopart links to the distributor to buy.</span></p>
+        </div>
+        <ul class="doclinks">
+          <li><a href="https://www.renesas.com/en/design-resources/boards-kits/ek-ra8p1" target="_blank" rel="noopener"><svg class="i"><use href="#i-doc"/></svg>User's Manual</a></li>
+          <li><a href="https://www.renesas.com/en/design-resources/boards-kits/ek-ra8p1" target="_blank" rel="noopener"><svg class="i"><use href="#i-doc"/></svg>Quick Start Guide</a></li>
+          <li><a href="https://www.renesas.com/en/design-resources/boards-kits/ek-ra8p1" target="_blank" rel="noopener"><svg class="i"><use href="#i-doc"/></svg>Design Package</a></li>
+        </ul>
+        <p class="mini">Features</p>
+        <ul class="features">
+          <li>MIPI-CSI2 Camera</li><li>MIPI-DSI Display</li><li>Gigabit Ethernet</li><li>USB High-Speed</li>
+          <li>PDM Microphone</li><li>Arduino + Pmod</li><li>J-Link Debugger</li><li>Parallel RGB</li>
+        </ul>
+        <p class="inbox"><strong>In the box:</strong> EK-RA8P1 board, MIPI graphics expansion board (7-inch, 1024 × 600, capacitive touch), camera expansion board (Arducam OV5640, 5 MP), USB and Ethernet cables.<sup><a href="#src-4">4</a></sup></p>
+      </div>
+    </div>
+    <div class="projects">
+      <div class="proj-head">
+        <h3>Software Projects</h3><p>Clone and run on the kit</p>
+        <a href="https://github.com/renesas/ra-fsp-examples" target="_blank" rel="noopener"><svg class="i"><use href="#i-git"/></svg>View GitHub</a>
+      </div>
+      <ul class="proj-list">
+        <li><div><strong>Vision AI Demo</strong><span>Vision</span></div><button class="btn btn-secondary btn-sm" type="button" data-proto="Clone opens the Vision AI Demo project on GitHub on the live page.">Clone</button></li>
+        <li><div><strong>Audio Noise Suppression</strong><span>Audio / AI</span></div><button class="btn btn-secondary btn-sm" type="button" data-proto="Clone opens the Audio Noise Suppression project on GitHub on the live page.">Clone</button></li>
+        <li><div><strong>Secure Boot with MCUboot</strong><span>Security</span></div><button class="btn btn-secondary btn-sm" type="button" data-proto="Clone opens the Secure Boot with MCUboot project on GitHub on the live page.">Clone</button></li>
+        <li><div><strong>Peripheral Quick Start</strong><span>System Integration</span></div><button class="btn btn-secondary btn-sm" type="button" data-proto="Clone opens the Peripheral Quick Start project on GitHub on the live page.">Clone</button></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN IN: the highlight -->
+<section class="stage" id="design-in" aria-labelledby="di-title">
+  <div class="container">
+    <p class="rv rv-tag">Design In: rebuilt as the page highlight around the RA8P1 solutions Tom listed (point 2). Diagrams and Renesas parts come from the Renesas application pages.</p>
+    <p class="eyebrow">02 Design In</p>
+    <h2 class="title" id="di-title">Start from a Validated Design</h2>
+    <p class="lede">Renesas reference designs built on RA8P1. Pick one, explore its block diagram, and check stock for every Renesas part before you commit.<sup><a href="#src-5">5</a></sup></p>
+    <div class="sol-tabs" id="sol-tabs" role="tablist" aria-label="Reference designs"></div>
+    <div class="viewer" id="viewer" role="tabpanel">
+      <div class="viewer-bar" id="viewer-bar"></div>
+      <div class="canvas">
+        <svg id="sol-svg" viewBox="0 0 760 420" role="img" aria-label="Reference design block diagram"></svg>
+        <div class="canvas-foot">
+          <p class="sel-info" id="sel-info" aria-live="polite">Select a block to find its part in the bill of materials.</p>
+          <div class="legend"><span><i class="lp"></i>Renesas part</span><span><i class="le"></i>Third-party block</span></div>
+        </div>
+      </div>
+      <div class="bom" id="bom"></div>
+    </div>
+    <div class="proto-bar">
+      <div><strong>Prototype This Design on the EK-RA8P1</strong><span>Every RA8P1 peripheral broken out. From $183.00 at 5 authorized distributors.</span></div>
+      <button class="btn btn-primary" type="button" data-buy="design-in" aria-haspopup="dialog" aria-expanded="false" aria-controls="buypop">Get the Eval Kit <svg class="i"><use href="#i-down"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCE: Option B -->
+<section class="section" id="source" aria-labelledby="src-title">
+  <div class="container">
+    <p class="rv rv-tag">Parts: Option B (quick picks, filters, compare tray). Added Cores, MIPI and Max Clock columns, decoded from the Renesas ordering reference. "Flash" relabeled MRAM.</p>
+    <p class="eyebrow">03 Source</p>
+    <h2 class="title" id="src-title">Find the Right RA8P1 Part</h2>
+    <p class="lede">Six active, in-stock MPNs. Compare package, memory and I/O, then compare price and stock across distributors.</p>
+    <div class="picks" id="picks"></div>
+    <div class="filters" id="filters" aria-label="Filter parts">
+      <button class="fchip" type="button" aria-pressed="true" data-f="active">Active</button>
+      <button class="fchip" type="button" aria-pressed="true" data-f="stock">In Stock</button>
+      <label class="fsel">Package <select id="f-pkg"><option value="all">All</option><option value="224">224-pin LFBGA</option><option value="289">289-pin LFBGA</option></select></label>
+      <label class="fsel">MRAM <select id="f-mram"><option value="all">All</option><option value="512 KB">512 KB</option><option value="1 MB">1 MB</option></select></label>
+      <label class="fsel">Max Clock <select id="f-clk"><option value="all">All</option><option value="1 GHz">1 GHz</option><option value="800 MHz">800 MHz</option></select></label>
+      <span class="fcount" id="f-count" aria-live="polite"></span>
+    </div>
+    <div class="table-wrap">
+      <table class="parts" id="parts">
+        <thead><tr>
+          <th scope="col"><span class="sr-only">Select</span></th>
+          <th scope="col">Part</th><th scope="col">Availability</th><th scope="col">Avg. Price</th><th scope="col">Package</th>
+          <th scope="col">MRAM</th><th scope="col">Cores</th><th scope="col">MIPI CSI-2/DSI</th><th scope="col">Max Clock</th>
+          <th scope="col">ADC Ch.</th><th scope="col">I/Os</th><th scope="col">Supply (V)</th><th scope="col">Docs</th>
+        </tr></thead>
+        <tbody id="parts-body"></tbody>
+      </table>
+    </div>
+    <div class="tray" id="tray" aria-live="polite"></div>
+    <p class="data-note">Availability and average price as shown on the current page. The live page reads Octopart offer data.<sup><a href="#src-6">6</a></sup><a href="https://octopart.com/search?q=R7KA8P1" target="_blank" rel="noopener">View All RA8P1 Parts in Search</a></p>
+    <div class="nudge">
+      <p><strong>Not sure which variant? Evaluate first.</strong> The EK-RA8P1 is built around the R7KA8P1KFLCAC: dual-core, MIPI, 1 MB MRAM.<sup><a href="#src-4">4</a></sup></p>
+      <button class="btn btn-primary btn-sm" type="button" data-buy="source" aria-haspopup="dialog" aria-expanded="false" aria-controls="buypop">Get the Eval Kit</button>
+    </div>
+    <div class="cad-row">
+      <p><strong>CAD Models for RA8P1</strong><span>Schematic symbol, PCB footprint and 3D model (STEP)</span></p>
+      <button class="btn btn-secondary btn-sm" type="button" data-proto="Place in Altium Designer opens the part's CAD models on the live page.">Place in Altium Designer</button>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES, DISTRIBUTORS, FAQ: Options B and C -->
+<section class="section alt" id="resources" aria-labelledby="res-title">
+  <div class="container">
+    <p class="rv rv-tag">Resources, distributor strip and FAQ: Options B and C. FAQ answers filled in from Renesas sources.</p>
+    <p class="eyebrow">Resources</p>
+    <h2 class="title" id="res-title">Technical Resources for Every Stage</h2>
+    <div class="rtabs" role="tablist" aria-label="Resource types">
+      <button class="rtab" role="tab" aria-selected="true" aria-controls="r-docs" id="t-docs">Documentation</button>
+      <button class="rtab" role="tab" aria-selected="false" aria-controls="r-soft" id="t-soft" tabindex="-1">Software</button>
+      <button class="rtab" role="tab" aria-selected="false" aria-controls="r-vid" id="t-vid" tabindex="-1">Videos</button>
+      <button class="rtab" role="tab" aria-selected="false" aria-controls="r-cad" id="t-cad" tabindex="-1">CAD</button>
+    </div>
+    <div class="docs" id="r-docs" role="tabpanel" aria-labelledby="t-docs">
+      <article class="doc"><span class="type">Datasheet</span><h4>RA8P1 Group Datasheet</h4><p>Product specifications and electrical characteristics. The starting point for any design.</p><span class="meta">PDF · 5.33 MB · Rev.1.30 · Feb 2026</span><a class="dl" href="https://www.renesas.com/en/document/dst/ra8p1-group-datasheet?r=25574019" target="_blank" rel="noopener"><svg class="i"><use href="#i-dl"/></svg>Download</a></article>
+      <article class="doc"><span class="type">Manual: Hardware</span><h4>RA8P1 Group User's Manual: Hardware</h4><p>Full hardware reference: CPU, NPU, memory, peripherals, display and electrical specs.</p><span class="meta">PDF · 46.91 MB · Rev.1.30 · Feb 2026</span><a class="dl" href="https://www.renesas.com/en/document/mah/ra8p1-group-users-manual-hardware?r=25574019" target="_blank" rel="noopener"><svg class="i"><use href="#i-dl"/></svg>Download</a></article>
+      <article class="doc"><span class="type">Handbook</span><h4>RA8P1 Group Handbook</h4><p>Essential materials organized by development phase. Start here for planning.</p><span class="meta">PDF · 206 KB · Rev.1.00 · Jan 20, 2026</span><a class="dl" href="https://www.renesas.com/en/products/ra8p1?tab=documentation" target="_blank" rel="noopener"><svg class="i"><use href="#i-dl"/></svg>Download</a></article>
+      <article class="doc"><span class="type">Application Note</span><h4>EK-RA8P1 Example Project Bundle</h4><p>Example projects for the FSP modules supported on the kit, with setup steps.</p><span class="meta">R20AN0799EU0110 · Rev.1.10</span><a class="dl" href="https://www.renesas.com/en/document/apn/ek-ra8p1-example-project-bundle" target="_blank" rel="noopener"><svg class="i"><use href="#i-dl"/></svg>Download</a></article>
+    </div>
+    <div class="docs" id="r-soft" role="tabpanel" aria-labelledby="t-soft" hidden>
+      <article class="doc"><span class="type">Software</span><h4>Flexible Software Package (FSP)</h4><p>Renesas drivers and middleware for RA MCUs, with FreeRTOS and Azure RTOS support.</p><a class="dl" href="https://www.renesas.com/en/products/ra8p1?tab=software-tools" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg>View on renesas.com</a></article>
+      <article class="doc"><span class="type">IDE</span><h4>e² studio</h4><p>Renesas IDE with configurators and code generation for FSP projects.</p><a class="dl" href="https://www.renesas.com/software-tool/e-studio" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg>View on renesas.com</a></article>
+      <article class="doc"><span class="type">AI Framework</span><h4>RUHMI</h4><p>Renesas framework for quantizing, converting and deploying neural network models on RA8P1.</p><a class="dl" href="https://www.renesas.com/en/products/ra8p1?tab=software-tools" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg>View on renesas.com</a></article>
+      <article class="doc"><span class="type">Examples</span><h4>RA FSP Example Projects</h4><p>Example projects for EK-RA8P1, including MIPI CSI, PDM and Ethos-U55 face detection.</p><a class="dl" href="https://github.com/renesas/ra-fsp-examples" target="_blank" rel="noopener"><svg class="i"><use href="#i-git"/></svg>View GitHub</a></article>
+    </div>
+    <div class="docs" id="r-vid" role="tabpanel" aria-labelledby="t-vid" hidden>
+      <article class="doc"><span class="type">Video</span><h4>AI-Accelerated RA8P1 Microcontroller</h4><p>Renesas overview of the RA8P1 and its AI performance.</p><a class="dl" href="https://www.renesas.com/en/products/ra8p1?tab=videos" target="_blank" rel="noopener"><svg class="i"><use href="#i-play"/></svg>Watch on renesas.com</a></article>
+    </div>
+    <div class="docs" id="r-cad" role="tabpanel" aria-labelledby="t-cad" hidden>
+      <article class="doc"><span class="type">CAD</span><h4>Schematic Symbols, Footprints and 3D Models</h4><p>Available on each RA8P1 part page on Octopart where the manufacturer provides them.</p><a class="dl" href="#source"><svg class="i"><use href="#i-right"/></svg>Go to the Part Table</a></article>
+    </div>
+    <div class="dist-strip">
+      <span>Stocked by Authorized Distributors</span>
+      <ul><li>DigiKey</li><li>Mouser</li><li>Farnell</li><li>Future Electronics</li><li>Avnet</li><li>Verical</li></ul>
+    </div>
+    <div class="faq">
+      <h3 class="h-sub">Questions Engineers Ask</h3>
+      <div class="faq-grid">
+        <div>
+          <details><summary>Which RA8P1 parts are dual-core?</summary><p>Dual-core parts add a 250 MHz Cortex-M33 next to the Cortex-M85. The letter after R7KA8P1 tells you: J and K are dual-core, A and B are single-core. B and K also have MIPI CSI-2 and DSI.<sup><a href="#src-3">3</a></sup></p></details>
+          <details><summary>What is the difference between the Ta and Tj grades?</summary><p>Parts rated −40 to 105 °C (Ta) run the Cortex-M85 at up to 800 MHz and the Cortex-M33 at 200 MHz. Parts rated 0 to 95 °C (Tj) run at up to 1 GHz and 250 MHz. In the part number, the third letter after R7KA8P1 is D for the Ta grade and L for the Tj grade.<sup><a href="#src-1">1</a>,<a href="#src-3">3</a></sup></p></details>
+        </div>
+        <div>
+          <details><summary>Does the EK-RA8P1 include a camera and display?</summary><p>Yes. It ships with a MIPI graphics expansion board (7-inch, 1024 × 600 capacitive touch display) and a camera expansion board with an Arducam OV5640 5 MP module.<sup><a href="#src-4">4</a></sup></p></details>
+          <details><summary>Where do I get CAD models for Altium Designer?</summary><p>Each RA8P1 part page on Octopart lists the schematic symbol, footprint and 3D model where available. The CAD row under Source links to them.</p></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing" aria-labelledby="cl-title">
+  <div class="container closing-inner">
+    <div><h2 id="cl-title">Start Building with RA8P1</h2><p>Get the kit, open a reference design, and compare price and stock for every MPN.</p></div>
+    <div class="ctas">
+      <button class="btn btn-primary" type="button" data-buy="closing" aria-haspopup="dialog" aria-expanded="false" aria-controls="buypop">Get the Eval Kit <svg class="i"><use href="#i-down"/></svg></button>
+      <a class="btn btn-ghost-dark" href="https://octopart.com/search?q=R7KA8P1" target="_blank" rel="noopener">Compare Price and Stock</a>
+    </div>
+  </div>
+</section>
+
+<section class="sources" id="sources" aria-labelledby="sources-title">
+  <div class="container">
+    <h2 id="sources-title">Sources and Notes</h2>
+    <ol>
+      <li id="src-1">Renesas, <a href="https://www.renesas.com/en/products/ra8p1" target="_blank" rel="noopener">RA8P1 product page</a>: features, description and parameters, including 1 GHz Cortex-M85, 256 GOPS Ethos-U55, 7,300+ CoreMark, 2 MB SRAM including TCM, 22 nm ULL and temperature ratings.</li>
+      <li id="src-2">Renesas, <a href="https://www.renesas.com/en/about/newsroom/renesas-sets-new-mcu-performance-bar-1-ghz-ra8p1-devices-ai-acceleration" target="_blank" rel="noopener">RA8P1 launch release</a>, July 2025: peripherals for vision and voice AI plus real-time analytics, and up to 35 times more inferences per second than the Cortex-M85 alone.</li>
+      <li id="src-3">Renesas, <a href="https://www.renesas.cn/zh/document/fly/renesas-ra8p1-group" target="_blank" rel="noopener">RA8P1 Group flyer</a> (R01PM0107EU0100, July 2025): block diagram, key features and ordering reference used to decode the part numbers.</li>
+      <li id="src-4">Renesas, <a href="https://www.renesas.com/en/design-resources/boards-kits/ek-ra8p1" target="_blank" rel="noopener">EK-RA8P1 kit page</a>: kit contents and board features.</li>
+      <li id="src-5">Renesas application pages: <a href="https://www.renesas.com/en/applications/consumer-electronics/cameras/video-conferencing-camera-ai-capabilities" target="_blank" rel="noopener">Video Conferencing Camera with AI Capabilities</a>, <a href="https://www.renesas.com/en/applications/industrial/building-automation/ai-enabled-surveillance-camera" target="_blank" rel="noopener">AI-Enabled Surveillance Camera</a> and <a href="https://www.renesas.com/en/applications/industrial/building-automation/e-ai-ready-gui-controller-appliances-and-industrial-systems" target="_blank" rel="noopener">e-AI-Ready GUI Controller for Appliances and Industrial Systems</a>. Diagrams on this page are simplified from them.</li>
+      <li id="src-6">Offers, stock and average prices are illustrative in this prototype: kit offers from Concept C, part rows as shown on the current Octopart page. The live page reads Octopart offer data.</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer class="op-footer">
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-news"><a class="wordmark" href="https://octopart.com/">Octopart</a><p>News and updates from Octopart and trusted partners.</p><a class="btn btn-secondary btn-sm" href="https://octopart.com/" data-proto="Subscribe opens the Octopart newsletter sign-up on the live site.">Subscribe</a></div>
+      <div><h4>Company</h4><ul><li><a href="https://octopart.com/">About Octopart</a></li><li><a href="https://octopart.com/">Careers</a></li><li><a href="https://octopart.com/">FAQ</a></li></ul></div>
+      <div><h4>Design and Tools</h4><ul><li><a href="https://octopart.com/">BOM Tool</a></li><li><a href="https://octopart.com/">Design Solutions</a></li><li><a href="https://octopart.com/">API</a></li></ul></div>
+      <div><h4>Browse</h4><ul><li><a href="https://octopart.com/">Parts by Category</a></li><li><a href="https://octopart.com/">Manufacturers</a></li><li><a href="https://octopart.com/">Distributors</a></li></ul></div>
+      <div><h4>Community</h4><ul><li><a href="https://octopart.com/">The Pulse</a></li><li><a href="https://octopart.com/">Newsletter</a></li></ul></div>
+    </div>
+    <div class="f-legal"><span>Copyright © 2026 Octopart, an Altium company</span><a href="https://octopart.com/">Terms</a><a href="https://octopart.com/">Privacy</a><a href="https://octopart.com/">Cookie Policy</a><a href="https://octopart.com/">Do Not Sell or Share My Info</a></div>
+  </div>
+</footer>
+
+<div class="mobilebar" aria-label="Evaluation kit">
+  <p><strong>EK-RA8P1 from $183.00</strong>5 authorized distributors</p>
+  <button class="btn btn-primary btn-sm" type="button" data-buy="mobile-bar" aria-haspopup="dialog" aria-expanded="false" aria-controls="buypop">Get the Eval Kit</button>
+</div>
+
+<div class="buypop" id="buypop" role="dialog" aria-modal="false" aria-labelledby="buypop-title"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="rv-ctl">
+  <button type="button" id="rv-toggle" aria-pressed="false">Show Review Notes</button>
+  <button type="button" id="rv-open">Open Notes</button>
+</div>
+<aside class="rv-panel" id="rv-panel" aria-labelledby="rv-title" aria-hidden="true">
+  <header>
+    <div><h2 id="rv-title">Review Notes</h2><p class="lead">Built from Hani's combined sections (30 Oct) and Tom's comments (15 Oct).</p></div>
+    <button class="iconbtn" type="button" id="rv-close" aria-label="Close review notes"><svg class="i"><use href="#i-x"/></svg></button>
+  </header>
+  <h3>Where each section comes from</h3>
+  <ul>
+    <li>Hero and use cases: Option B.</li>
+    <li>System Overview: the original Renesas diagram, simplified, contrast fixed, every block clickable.</li>
+    <li>Evaluate: Option C, with the Buy dropdown in place of the offers table.</li>
+    <li>Design In: rebuilt around Tom's four RA8P1 solutions.</li>
+    <li>Parts: Option B. Resources and FAQ: Options B and C.</li>
+  </ul>
+  <h3>Tom's four points</h3>
+  <ul>
+    <li>Eval kit orders: Buy opens a dropdown of distributors with stock and price. Every distributor click fires <code>evalkit_distributor_click</code> with distributor and placement (hero, sticky bar, evaluate, design in, source, closing, mobile bar).</li>
+    <li>Solutions as the highlight: surveillance camera, video conferencing camera, AI-ready GUI and predictive maintenance, each with a block diagram and the Renesas parts list.</li>
+    <li>Block diagram: familiar Renesas layout, click a block for its description. Datasheet page links are marked as a later phase.</li>
+    <li>Branding: Octopart header, footer and 4 px buttons. No Altium nav or mega menu.</li>
+  </ul>
+  <h3>Answer for the blue boxes</h3>
+  <p>Voice, Vision and Analytics follows Renesas's own RA8P1 positioning (product page and launch release). The blue box in Use Cases lists the source for each card.</p>
+  <h3>Open questions</h3>
+  <ul>
+    <li>All six in-stock MPNs in the parts table are single-core parts without MIPI. The page sells MIPI CSI-2 vision and a dual-core kit. Should Source show MIPI and dual-core parts too?</li>
+    <li>Average prices in the table ($2.43 to $3.10) look low next to the $28.17 sample price CNX Software reported at launch. Worth a data check.</li>
+    <li>ADC channel counts (10, 12, 16) vary between parts that differ only by temperature grade, while Renesas lists 12 or 30 channels by package.</li>
+    <li>Option B's "Flash" column holds the MRAM sizes, so it is relabeled MRAM.</li>
+    <li>The AI-ready GUI and predictive maintenance solutions are the same Renesas design (EU189, high-end variant), shown here from two angles. Merge them if Octopart lists one.</li>
+    <li>Renesas lists RA8D1 or RA8P1 as the MCU for that design. Confirm Octopart tags it as an RA8P1 solution.</li>
+  </ul>
+  <h3>Placeholders</h3>
+  <ul>
+    <li>Hero render, RA8P1 badge, EK-RA8P1 photo and the Octopart logo are drawn stand-ins. Icons stand in for the Octopart icon set.</li>
+    <li>Offers, stock and prices are illustrative. Prototype-only actions show a short note instead of navigating.</li>
+  </ul>
+</aside>
+
+<script>
+/* ---------- Data ---------- */
+const DS_URL = "https://www.renesas.com/en/document/dst/ra8p1-group-datasheet?r=25574019";
+
+/* Groups follow the Renesas RA8P1 block diagram (flyer R01PM0107EU0100). */
+const GROUPS = {
+  core:     { name: "Arm Cores and NPU", acc: "#285483" },
+  mem:      { name: "Memory",            acc: "#3671B0" },
+  comm:     { name: "Communication",     acc: "#2E654D" },
+  analog:   { name: "Analog",            acc: "#E2AF1D" },
+  hmi:      { name: "HMI",               acc: "#0D52A1" },
+  timers:   { name: "Timers",            acc: "#EB7114" },
+  system:   { name: "System",            acc: "#666666" },
+  safety:   { name: "Safety",            acc: "#B22113" },
+  security: { name: "Security",          acc: "#B1A497" }
+};
+const LAYOUT = { cols: [["core", "mem"], ["comm", "analog"], ["hmi", "timers"]], bottom: ["system", "safety", "security"] };
+
+const MIPI_NOTE = "MIPI parts only: part numbers starting R7KA8P1B or R7KA8P1K.";
+const BLOCKS = [
+  // Arm cores and NPU
+  { id:"cm85", g:"core", name:"Arm Cortex-M85", sub:"1 GHz · Helium", span:1, big:1,
+    desc:"The main application core: Armv8.1-M with the Helium vector extension (MVE) for DSP and machine-learning maths. Renesas quotes over 7,300 CoreMark.",
+    figs:[["Max clock","1 GHz on 0 to 95 °C Tj parts, 800 MHz on −40 to 105 °C parts"],["TCM","256 KB"],["Cache","32 KB I/D"]] },
+  { id:"npu", g:"core", name:"Arm Ethos-U55 NPU", sub:"256 GOPS", span:1, big:1,
+    desc:"Neural processing unit that takes convolutional and recurrent network layers off the CPU. Renesas reports up to 35 times more inferences per second than the Cortex-M85 alone, depending on the network.",
+    figs:[["Throughput","256 GOPS at 500 MHz"],["MACs per cycle","256"],["Networks Renesas names","DS-CNN, ResNet, MobileNet, TinyYOLO"]] },
+  { id:"cm33", g:"core", name:"Arm Cortex-M33", sub:"250 MHz", span:1,
+    desc:"The second core on dual-core parts. It can run real-time control, connectivity or housekeeping while the Cortex-M85 runs the main workload.",
+    figs:[["Max clock","250 MHz on Tj parts, 200 MHz on −40 to 105 °C parts"],["TCM","128 KB"],["Cache","32 KB I/D"]],
+    note:"Dual-core parts only: part numbers starting R7KA8P1J or R7KA8P1K." },
+  { id:"dbg", g:"core", name:"Core Support and Debug", sub:"FPU | Arm MPU | NVIC | JTAG | SWD | ETM | Boundary Scan", span:1,
+    desc:"Floating-point unit, Arm memory protection unit and nested vectored interrupt controller, plus JTAG and SWD debug, ETM trace and boundary scan.", figs:[] },
+  // Memory
+  { id:"nvm", g:"mem", name:"Code NVM", sub:"MRAM + Flash",
+    desc:"Non-volatile code memory. On-chip MRAM holds the application; system-in-package (SiP) versions add flash in the same package.",
+    figs:[["MRAM","0.5 MB or 1 MB, by part"],["SiP flash","4 MB or 8 MB (303-pin SiP parts)"]] },
+  { id:"sram", g:"mem", name:"Data SRAM w/ ECC", sub:"1.6 MB",
+    desc:"Main data memory with error correction, for frame buffers, audio buffers and model data.",
+    figs:[["Size","1.6 MB"],["Protection","ECC"]] },
+  { id:"tcm", g:"mem", name:"TCM", sub:"256 KB + 128 KB",
+    desc:"Tightly coupled memory next to each core for low-latency, deterministic access. With the data SRAM, on-chip SRAM totals 2 MB.",
+    figs:[["Cortex-M85","256 KB"],["Cortex-M33","128 KB"]] },
+  { id:"cache", g:"mem", name:"I/D-Cache", sub:"32 KB + 32 KB",
+    desc:"Instruction and data caches that hide memory access latency for each core.",
+    figs:[["Cortex-M85","32 KB"],["Cortex-M33","32 KB"]] },
+  // Communication
+  { id:"gbe", g:"comm", name:"Gigabit Ethernet w/ TSN", sub:"+ 2-port switch", span:1,
+    desc:"Gigabit Ethernet MAC with time-sensitive networking (TSN) and a 2-port switch, for deterministic industrial networks and video streaming.",
+    figs:[["Speeds","10/100/1000 Mbps"],["Per Renesas diagram","MAC with TSN (×2) plus 2-port switch"]] },
+  { id:"canfd", g:"comm", name:"CAN-FD ×2", desc:"Two CAN with Flexible Data-rate channels for automotive and industrial control networks.", figs:[["Channels","2"]] },
+  { id:"usb", g:"comm", name:"USB FS + USB HS", sub:"USB 2.0", desc:"One USB 2.0 full-speed and one USB 2.0 high-speed port, each usable as host or device.", figs:[["Full-speed","1, host or device"],["High-speed","1, host or device"]] },
+  { id:"sdhi", g:"comm", name:"SDHI/MMC ×2", desc:"Two SD and MMC host interfaces for SD cards and eMMC storage.", figs:[["Channels","2"]] },
+  { id:"i3c", g:"comm", name:"I3C ×1, I²C ×3", desc:"One MIPI I3C bus and three I²C buses for sensors and board peripherals.", figs:[["I3C","1"],["I²C","3"]] },
+  { id:"sci", g:"comm", name:"SCI ×10", desc:"Serial communications interfaces for UART, simple SPI and simple I²C links.", figs:[["Channels","Up to 10, by package"]] },
+  { id:"spi", g:"comm", name:"SPI ×2", desc:"Two dedicated SPI channels.", figs:[["Channels","2"]] },
+  { id:"ospi", g:"comm", name:"OSPI ×2", sub:"XIP & DOTF", desc:"Two xSPI-compliant octal SPI interfaces. Execute-in-place (XIP) runs code from external flash, and decryption-on-the-fly (DOTF) lets that code stay encrypted in flash.", figs:[["Channels","2"],["Modes","XIP, DOTF"]] },
+  { id:"ssi", g:"comm", name:"SSI ×2 & PDM 3ch", desc:"Two serial sound interfaces (I²S, TDM) and a 3-channel PDM input for digital microphone arrays. This is the audio path for voice AI.", figs:[["SSI","2 channels, I²S and TDM"],["PDM","3 channels"]] },
+  { id:"extbus", g:"comm", name:"32-bit External Memory Bus", desc:"External bus for SDRAM and chip-select memories, for when frame buffers or models outgrow on-chip memory.", figs:[["Width","32-bit or 16-bit"],["Memory types","SDRAM, chip-select memory"]] },
+  // Analog
+  { id:"adc", g:"analog", name:"16-bit ADC", sub:"2 units", desc:"Two 16-bit A/D converter units with sample-and-hold, for vibration, current and other sensor signals.", figs:[["Units","2"],["Channels","23 in the Renesas diagram; varies by package"],["Sample-and-hold","3 channels ×2"]] },
+  { id:"dac", g:"analog", name:"12-bit DAC ×2", desc:"Two 12-bit D/A converter channels.", figs:[["Channels","2"]] },
+  { id:"temp", g:"analog", name:"Temperature Sensor", desc:"On-chip sensor for monitoring die temperature.", figs:[] },
+  { id:"comp", g:"analog", name:"High-speed Comparator", sub:"4ch", desc:"High-speed analog comparators for fast threshold detection, such as overcurrent trips.", figs:[["Channels","4"]] },
+  // HMI
+  { id:"glcdc", g:"hmi", name:"Graphics LCDC w/ RGB i/f", desc:"Graphics LCD controller that drives a display over a parallel RGB interface, or over MIPI DSI on parts that have it.", figs:[] },
+  { id:"drw", g:"hmi", name:"2D DRW", sub:"2D drawing engine", desc:"2D drawing engine that takes shape drawing, blending and image operations off the CPU, for GUIs and on-screen overlays such as detection boxes.", figs:[] },
+  { id:"dsi", g:"hmi", name:"MIPI DSI", mipi:1, desc:"MIPI DSI display interface for high-resolution panels. The EK-RA8P1 uses it for its 7-inch touch display.", figs:[], note:MIPI_NOTE },
+  { id:"csi", g:"hmi", name:"MIPI CSI-2", mipi:1, desc:"MIPI CSI-2 camera interface for image sensors.", figs:[["Lanes","2"],["Rate","Up to 720 Mbps per lane"]], note:MIPI_NOTE },
+  { id:"ceu", g:"hmi", name:"CEU 16-bit Camera", span:1, desc:"Parallel camera interface (capture engine unit) for image sensors up to 5 MP.", figs:[["Bus width","Up to 16-bit"],["Sensor size","Up to 5 MP"]] },
+  // Timers
+  { id:"gpte", g:"timers", name:"32-bit GPTE", sub:"10ch", desc:"Enhanced general PWM timers for PWM generation, input capture and motor control.", figs:[["Channels","10"]] },
+  { id:"gpteh", g:"timers", name:"32-bit GPTE (Hi-Res)", sub:"4ch", desc:"PWM timer channels with high-resolution output, for fine control in power conversion.", figs:[["Channels","4"]] },
+  { id:"ulpt", g:"timers", name:"32-bit ULPT", sub:"2ch", desc:"Ultra-low-power timers that keep counting while the MCU is in low-power modes.", figs:[["Channels","2"]] },
+  { id:"agt", g:"timers", name:"16-bit AGT", sub:"2ch", desc:"Low-power asynchronous general-purpose timers.", figs:[["Channels","2"]] },
+  { id:"wdt", g:"timers", name:"WDT", sub:"2ch", desc:"Watchdog timers that reset the MCU if software stops responding.", figs:[["Channels","2"]] },
+  { id:"rtc", g:"timers", name:"RTC", desc:"Real-time clock and calendar.", figs:[] },
+  // System
+  { id:"irq", g:"system", name:"Interrupt Controller", desc:"Routes peripheral events to interrupts on the cores.", figs:[] },
+  { id:"lpm", g:"system", name:"Low Power Modes", desc:"Sleep and standby modes that cut power between workloads.", figs:[] },
+  { id:"dtc", g:"system", name:"DTC ×2", desc:"Data transfer controllers that move data on peripheral events without the CPU.", figs:[["Units","2"]] },
+  { id:"osc", g:"system", name:"On-chip Oscillator", desc:"Internal oscillators, so the MCU can start and run without an external crystal.", figs:[] },
+  { id:"dcdc", g:"system", name:"DC-DC Converter", desc:"On-chip DC-DC converter for the internal supply, to reduce power consumption.", figs:[] },
+  { id:"elc", g:"system", name:"ELC", desc:"Event link controller. Peripherals trigger each other directly, without CPU interrupts.", figs:[] },
+  { id:"dma", g:"system", name:"DMA (8ch ×2)", desc:"Two DMA controllers with eight channels each.", figs:[["Channels","8 ×2"]] },
+  { id:"clk", g:"system", name:"Clock Generation", desc:"Generates and distributes the core and peripheral clocks.", figs:[] },
+  { id:"vbat", g:"system", name:"VBAT", desc:"Backup battery supply that keeps backup-domain functions, such as the RTC, running when main power is off.", figs:[] },
+  // Safety
+  { id:"mpu2", g:"safety", name:"Memory Protection Unit", desc:"Blocks bus accesses outside permitted memory regions.", figs:[] },
+  { id:"mramp", g:"safety", name:"MRAM Area Protection", desc:"Protects selected MRAM regions from being rewritten.", figs:[] },
+  { id:"iwdt", g:"safety", name:"IWDT", desc:"Independent watchdog on its own clock, so it can still reset the MCU if the main clock fails.", figs:[] },
+  { id:"cac", g:"safety", name:"Clock Frequency Accuracy Measurement", desc:"Measures a clock against a reference and flags when it drifts.", figs:[] },
+  { id:"crc", g:"safety", name:"CRC Calculator", desc:"Hardware CRC for checking data and memory integrity.", figs:[] },
+  { id:"doc", g:"safety", name:"Data Operation Circuit", desc:"Hardware data comparison and arithmetic for self-test routines.", figs:[] },
+  { id:"sramp", g:"safety", name:"SRAM Parity Check", desc:"Parity checking that detects bit errors in SRAM.", figs:[] },
+  { id:"adcst", g:"safety", name:"ADC Self Test", desc:"Diagnostics that check the A/D converter is working correctly.", figs:[] },
+  { id:"plock", g:"safety", name:"Permanent Lock Function", desc:"Permanently locks selected areas so they cannot be changed in the field.", figs:[] },
+  { id:"pvd", g:"safety", name:"Programmable Voltage Detector", desc:"Watches the supply against a programmable threshold and can raise an interrupt or reset.", figs:[] },
+  { id:"eccs", g:"safety", name:"ECC in SRAM", desc:"Error-correcting code on SRAM, so bit errors are caught and corrected in hardware.", figs:[] },
+  { id:"poe", g:"safety", name:"POE", desc:"Port output enable. Drives PWM outputs to a safe state when a fault is detected, for motor and power control.", figs:[] },
+  // Security
+  { id:"aes", g:"security", name:"AES, ChaCha20", sub:"128/192/256", desc:"Hardware symmetric encryption in the Renesas Security IP: AES with 128, 192 or 256-bit keys, and ChaCha20.", figs:[] },
+  { id:"rsa", g:"security", name:"RSA 4K, ECC", desc:"Public-key acceleration for RSA up to 4096 bits and elliptic-curve cryptography.", figs:[] },
+  { id:"sha", g:"security", name:"SHA-2 / SHA-3", desc:"Hash acceleration for SHA-2 (224, 256, 384 and 512) and SHA-3.", figs:[] },
+  { id:"trng", g:"security", name:"TRNG", desc:"True random number generator for keys and nonces.", figs:[] },
+  { id:"sdbg", g:"security", name:"Secure Debug", desc:"Controls debug access, so production devices can lock or authenticate the debug port.", figs:[] },
+  { id:"fsbl", g:"security", name:"First Stage Boot Loader", desc:"Boot code held in immutable storage. It is the root of secure boot.", figs:[] },
+  { id:"otp", g:"security", name:"OTP (Immutable Storage)", desc:"One-time-programmable storage for keys and the first-stage boot loader.", figs:[] },
+  { id:"tz", g:"security", name:"TrustZone | EFP", desc:"Arm TrustZone isolates secure code and keys from application code. Renesas lists EFP support alongside it.", figs:[] },
+  { id:"mac", g:"security", name:"CMAC / HMAC / GMAC", desc:"Message authentication codes for checking that data and firmware have not been altered.", figs:[] },
+  { id:"dpa", g:"security", name:"DPA/SPA Side-Ch. Prot.", desc:"Countermeasures against differential and simple power analysis attacks on the crypto engines.", figs:[] }
+];
+
+/* Kit offers: illustrative, from Concept C. The live page reads Octopart offer data. */
+const OFFERS = [
+  { d:"Verical", stock:9, price:183.00 },
+  { d:"Future Electronics", stock:36, price:193.12 },
+  { d:"DigiKey", stock:41, price:193.26 },
+  { d:"Mouser", stock:119, price:195.98 },
+  { d:"Avnet", stock:12, price:208.44 }
+];
+
+/* Parts: availability and average price as shown on the current page (Concept B).
+   Cores, MIPI and max clock decoded from the Renesas ordering reference. */
+const PARTS = [
+  { mpn:"R7KA8P1ADDCAB", stock:1000,  price:3.000, pins:224, dims:"11 × 11 × 1.38 mm", mram:"512 KB", cores:1, mipi:false, clk:"800 MHz", grade:"−40 to 105 °C", adc:10, io:149 },
+  { mpn:"R7KA8P1ADDCAC", stock:26253, price:2.700, pins:289, dims:"12 × 12 × 1.38 mm", mram:"512 KB", cores:1, mipi:false, clk:"800 MHz", grade:"−40 to 105 °C", adc:12, io:208 },
+  { mpn:"R7KA8P1ADLCAB", stock:1346,  price:3.100, pins:224, dims:"11 × 11 × 1.38 mm", mram:"512 KB", cores:1, mipi:false, clk:"1 GHz",   grade:"0 to 95 °C Tj", adc:16, io:149 },
+  { mpn:"R7KA8P1ADLCAC", stock:9047,  price:2.650, pins:289, dims:"12 × 12 × 1.38 mm", mram:"512 KB", cores:1, mipi:false, clk:"1 GHz",   grade:"0 to 95 °C Tj", adc:16, io:208 },
+  { mpn:"R7KA8P1AFDCAB", stock:10743, price:3.040, pins:224, dims:"11 × 11 × 1.38 mm", mram:"1 MB",   cores:1, mipi:false, clk:"800 MHz", grade:"−40 to 105 °C", adc:10, io:149 },
+  { mpn:"R7KA8P1AFDCAC", stock:159,   price:2.430, pins:289, dims:"12 × 12 × 1.38 mm", mram:"1 MB",   cores:1, mipi:false, clk:"800 MHz", grade:"−40 to 105 °C", adc:10, io:208 }
+];
+
+/* Reference designs: blocks and Renesas parts from the Renesas application pages. */
+const P = {
+  RA8P1:{ role:"MCU", desc:"1 GHz Arm Cortex-M85 and Ethos-U55 NPU AI microcontroller", q:"R7KA8P1" },
+  DA7212:{ role:"Audio codec", desc:"Ultra-low power stereo codec" },
+  "5P35023":{ role:"Clock", desc:"VersaClock 3S programmable clock generator" },
+  DA9062:{ role:"PMIC", desc:"PMIC for applications requiring up to 8.5 A" },
+  SLG59M1714V:{ role:"Load switch", desc:"5.5 V, 15 mΩ, 4 A load switch with current monitor" },
+  RAA211630:{ role:"Buck regulator", desc:"60 V, 3 A synchronous buck regulator, integrated FET" },
+  DA16600MOD:{ role:"Wi-Fi and Bluetooth LE", desc:"Ultra-low power Wi-Fi and Bluetooth LE combo module" },
+  iW1816:{ role:"AC/DC", desc:"Off-line digital PWM converter with 800 V bipolar transistor" },
+  RAA808013:{ role:"Buck regulator", desc:"5.5 V, 3 A synchronous buck regulator" },
+  RAA788158:{ role:"RS-485 transceiver", desc:"5 V half-duplex, 20 Mbps RS-485/422 transceiver" },
+  ZSC31015:{ role:"Sensor conditioner", desc:"Resistive sensor signal conditioner" }
+};
+const EU189_BOM = [["RA8P1",1],["DA16600MOD",1],["RAA788158",2],["ZSC31015",1],["iW1816",1],["RAA211630",1],["RAA808013",1]];
+const SOLUTIONS = {
+  surv: {
+    tab:"AI Surveillance Camera", tag:"Vision AI, security",
+    title:"AI-Enabled Surveillance Camera", variant:"Cost-optimized, MCU-based variant (Renesas US176-2)",
+    url:"https://www.renesas.com/en/applications/industrial/building-automation/ai-enabled-surveillance-camera",
+    desc:"A cost-optimized camera that runs vision AI on the RA8P1's Helium cores and Ethos-U55 NPU, with Power over Ethernet, IR illumination and local storage.",
+    mcuSub:"Cortex-M85 + Ethos-U55",
+    left:[ {id:"cam", label:"Camera Sensor Board", sub:"Third-party", iface:"MIPI CSI-2 / VIN"},
+           {id:"codec", label:"Audio Codec", sub:"DA7212", part:"DA7212", iface:"SSIE, I²C"},
+           {id:"clk", label:"Clock", sub:"5P35023", part:"5P35023", iface:"Ref. clock"} ],
+    right:[ {id:"eth", label:"Ethernet PHY + RJ45", sub:"Third-party", iface:"Ethernet"},
+            {id:"ir", label:"IR Illumination", sub:"Third-party", iface:"PWM"},
+            {id:"emmc", label:"eMMC", sub:"Third-party", iface:"MMC"},
+            {id:"sd", label:"SD Card", sub:"Third-party", iface:"SD"},
+            {id:"usb", label:"USB 2.0", sub:"Third-party", iface:"USB"} ],
+    bottom:[ {id:"pmic", label:"PMIC", sub:"DA9062", part:"DA9062"},
+             {id:"ls", label:"Load Switch", sub:"SLG59M1714V", part:"SLG59M1714V"},
+             {id:"buck", label:"Buck Regulator", sub:"RAA211630", part:"RAA211630"},
+             {id:"poe", label:"PoE Hot Plug", sub:"Third-party"} ],
+    bom:[["RA8P1",1],["DA7212",1],["5P35023",1],["DA9062",1],["SLG59M1714V",1],["RAA211630",1]],
+    ext:"Camera sensor board, microphone, Ethernet PHY and RJ45, PoE hot plug controller, IR illumination, eMMC, SD card, USB."
+  },
+  vc: {
+    tab:"AI Video Conferencing Camera", tag:"Vision AI, voice AI",
+    title:"Video Conferencing Camera with AI Capabilities", variant:"Renesas WS127",
+    url:"https://www.renesas.com/en/applications/consumer-electronics/cameras/video-conferencing-camera-ai-capabilities",
+    desc:"A 360° conferencing camera with multiple cameras and a beamforming microphone array. The RA8P1's Helium and Ethos-U55 handle voice localization, speaker tracking and image enhancement.",
+    mcuSub:"Cortex-M85 + Ethos-U55",
+    left:[ {id:"cam", label:"Camera Sensor Boards", sub:"Third-party, ×N", iface:"MIPI CSI-2"},
+           {id:"codec", label:"Audio Codec", sub:"DA7212 + mic array", part:"DA7212", iface:"SSIE, I²C"},
+           {id:"clk", label:"Clock", sub:"5P35023", part:"5P35023", iface:"Ref. clock"} ],
+    right:[ {id:"wifi", label:"Wi-Fi/Bluetooth LE", sub:"DA16600MOD", part:"DA16600MOD", iface:"SDIO"},
+            {id:"eth", label:"Ethernet PHY", sub:"Third-party", iface:"Ethernet"},
+            {id:"usb", label:"USB Peripherals", sub:"Third-party", iface:"USB HS"},
+            {id:"emmc", label:"eMMC", sub:"Third-party", iface:"MMC"},
+            {id:"sd", label:"SD Card", sub:"Third-party", iface:"SD"},
+            {id:"ir", label:"IR Illumination", sub:"Third-party", iface:"PWM"} ],
+    bottom:[ {id:"pmic", label:"PMIC", sub:"DA9062", part:"DA9062"},
+             {id:"ls", label:"Load Switch", sub:"SLG59M1714V", part:"SLG59M1714V"},
+             {id:"buck1", label:"Buck Regulator 1", sub:"RAA211630", part:"RAA211630"},
+             {id:"buck2", label:"Buck Regulator 2", sub:"RAA211630", part:"RAA211630"},
+             {id:"poe", label:"PoE Hot Plug", sub:"Third-party"} ],
+    bom:[["RA8P1",1],["DA7212",1],["DA16600MOD",1],["5P35023",1],["DA9062",1],["SLG59M1714V",1],["RAA211630",2]],
+    ext:"Camera sensor boards, beamforming microphone array, speaker, Ethernet PHY, PoE hot plug controller, IR illumination, eMMC, SD card, USB peripherals."
+  },
+  gui: {
+    tab:"AI-Ready GUI Controller", tag:"HMI, e-AI",
+    title:"e-AI-Ready GUI Controller for Appliances and Industrial Systems", variant:"High-end system controller (Renesas EU189). Renesas lists RA8P1 or RA8D1 as the MCU.",
+    url:"https://www.renesas.com/en/applications/industrial/building-automation/e-ai-ready-gui-controller-appliances-and-industrial-systems",
+    desc:"A touch-display system controller for heat pumps and other appliances. It switches loads, talks to motor drives and the cloud, and uses embedded AI to warn of failures early.",
+    mcuSub:"RA8P1 or RA8D1",
+    left:[ {id:"tft", label:"TFT Display + Touch", sub:"Third-party", iface:"MIPI DSI, I²C"},
+           {id:"trh", label:"Temp & rH Sensor", sub:"Third-party", iface:"I²C"},
+           {id:"oaq", label:"Air Quality Sensor", sub:"Third-party", iface:"I²C"} ],
+    right:[ {id:"wifi", label:"Wi-Fi + Bluetooth", sub:"DA16600MOD", part:"DA16600MOD", iface:"UART"},
+            {id:"lte", label:"LTE-M Module", sub:"Third-party", iface:"UART"},
+            {id:"eth", label:"Ethernet PHY", sub:"To the cloud", iface:"Ethernet"},
+            {id:"can", label:"CAN Bus PHY", sub:"To indoor unit", iface:"CAN"},
+            {id:"usb", label:"USB 2.0", sub:"Third-party", iface:"USB"} ],
+    bottom:[ {id:"fly", label:"Isolated Flyback AC/DC", sub:"iW1816", part:"iW1816"},
+             {id:"buck1", label:"3 A Buck Regulator", sub:"RAA211630", part:"RAA211630"},
+             {id:"buck2", label:"3 A Buck Regulator", sub:"RAA808013", part:"RAA808013"} ],
+    bom:EU189_BOM,
+    ext:"TFT display and touch, temperature and humidity sensor, air quality sensor, LTE-M module, Ethernet and CAN PHYs, USB."
+  },
+  pdm: {
+    tab:"Predictive Maintenance Controller", tag:"Real-time analytics, e-AI",
+    title:"High-End System Controller for Predictive Maintenance", variant:"Same Renesas design as the GUI controller (EU189), seen from the sensing and motor side.",
+    url:"https://www.renesas.com/en/applications/industrial/building-automation/e-ai-ready-gui-controller-appliances-and-industrial-systems",
+    desc:"Pressure, temperature and air-quality sensing, plus RS-485 links to two motor drives, give the embedded AI model the data to flag faults such as motor obstructions early.",
+    mcuSub:"RA8P1 or RA8D1",
+    left:[ {id:"ssc", label:"Sensor Conditioner", sub:"ZSC31015 + pressure", part:"ZSC31015", iface:"Sensor I/F"},
+           {id:"trh", label:"Temp & rH Sensor", sub:"Third-party", iface:"I²C"},
+           {id:"oaq", label:"Air Quality Sensor", sub:"Third-party", iface:"I²C"} ],
+    right:[ {id:"rs1", label:"RS-485 to Motor Drive 1", sub:"RAA788158", part:"RAA788158", iface:"RS-485"},
+            {id:"rs2", label:"RS-485 to Motor Drive 2", sub:"RAA788158", part:"RAA788158", iface:"RS-485"},
+            {id:"io", label:"Relay Outputs", sub:"Digital control I/Os", iface:"GPIO"},
+            {id:"can", label:"CAN Bus PHY", sub:"To indoor unit", iface:"CAN"},
+            {id:"eth", label:"Ethernet PHY", sub:"To the cloud", iface:"Ethernet"},
+            {id:"i3c", label:"I3C Sensor Bus", sub:"High-speed serial", iface:"I3C"} ],
+    bottom:[ {id:"fly", label:"Isolated Flyback AC/DC", sub:"iW1816", part:"iW1816"},
+             {id:"buck1", label:"3 A Buck Regulator", sub:"RAA211630", part:"RAA211630"},
+             {id:"buck2", label:"3 A Buck Regulator", sub:"RAA808013", part:"RAA808013"} ],
+    bom:EU189_BOM,
+    ext:"Cooling-liquid pressure sensor, temperature and humidity sensor, air quality sensor, two 7 kW+ motor drives with PFC, relays, CAN and Ethernet PHYs."
+  }
+};
+
+/* ---------- Behaviour ---------- */
+(function () {
+  "use strict";
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const icon = (n) => `<svg class="i" aria-hidden="true"><use href="#i-${n}"/></svg>`;
+  const fmt = (n) => n.toLocaleString("en-US");
+  const money = (n) => "$" + n.toFixed(2);
+  const narrow = () => window.matchMedia("(max-width: 900px)").matches;
+
+  /* Toast */
+  let toastTimer;
+  function toast(msg) {
+    const t = $("#toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove("show"), 4200);
+  }
+
+  /* Analytics hook: pushes to dataLayer so the live page can wire it to GA4 or Snowflake */
+  function track(event, data) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event }, data));
+    if (window.console) console.info("[track]", event, data);
+  }
+
+  /* Prototype-only actions explain what the live page would do */
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest("[data-proto]");
+    if (!el || el.disabled) return;
+    e.preventDefault();
+    toast("Prototype: " + el.dataset.proto);
+  });
+
+  /* Octopart search box goes to real Octopart search */
+  function runSearch() {
+    const q = $("#op-q").value.trim() || "RA8P1";
+    window.open("https://octopart.com/search?q=" + encodeURIComponent(q), "_blank", "noopener");
+  }
+  $("#op-go").addEventListener("click", runSearch);
+  $("#op-q").addEventListener("keydown", (e) => { if (e.key === "Enter") runSearch(); });
+
+  /* ---------- Decorative art ---------- */
+  (function heroTraces() {
+    const g = $("#traces");
+    if (!g) return;
+    const T = [
+      [[112,120],[70,120],[50,100],[18,100]], [[112,160],[36,160]], [[112,200],[62,200],[42,220],[16,220]], [[112,240],[40,240]], [[112,280],[76,280],[56,300],[22,300]],
+      [[348,120],[392,120],[412,100],[442,100]], [[348,160],[424,160]], [[348,200],[398,200],[418,220],[444,220]], [[348,240],[420,240]], [[348,280],[386,280],[406,300],[438,300]],
+      [[150,82],[150,46],[130,26],[130,8]], [[200,82],[200,26]], [[260,82],[260,52],[280,32],[280,8]], [[310,82],[310,36]],
+      [[150,318],[150,356],[130,376],[130,394]], [[210,318],[210,370]], [[262,318],[262,350],[282,370],[282,394]], [[312,318],[312,362]]
+    ];
+    g.innerHTML = T.map((pts) => {
+      const d = "M" + pts.map((p) => p.join(" ")).join("L");
+      const [x, y] = pts[pts.length - 1];
+      return `<path d="${d}"/><circle cx="${x}" cy="${y}" r="3.2" fill="#568FCA" fill-opacity=".8" stroke="none"/>`;
+    }).join("");
+  })();
+
+  (function useCaseArt() {
+    const label = 'font-size="10.5" font-weight="700"';
+    // Voice AI
+    let v = `<rect x="14" y="14" width="134" height="22" rx="11" fill="#4DA881" fill-opacity=".16" stroke="#4DA881"/><circle cx="28" cy="25" r="4" fill="#4DA881"/><text x="38" y="29" fill="#DDF0E8" ${label}>Wake word detected</text>`;
+    const n = 46;
+    for (let i = 0; i < n; i++) {
+      const t = i / (n - 1);
+      const env = 0.22 + 0.78 * Math.exp(-Math.pow((t - 0.63) / 0.15, 2)) + 0.4 * Math.exp(-Math.pow((t - 0.22) / 0.09, 2));
+      const jit = 0.55 + 0.45 * Math.abs(Math.sin(i * 1.7) + Math.sin(i * 0.63)) / 2;
+      const h = Math.max(6, 96 * env * jit);
+      const hot = t > 0.5 && t < 0.77;
+      v += `<rect x="${(26 + i * 6.8).toFixed(1)}" y="${(102 - h / 2).toFixed(1)}" width="3.6" height="${h.toFixed(1)}" rx="1.8" fill="${hot ? "#CEDEF0" : "#568FCA"}" opacity="${hot ? 0.95 : 0.7}"/>`;
+    }
+    v += `<text x="346" y="172" text-anchor="end" font-size="10.5" fill="#CEDEF0" fill-opacity=".75">on-device inference</text>`;
+    $("#art-voice").innerHTML = v;
+    // Vision AI
+    $("#art-vision").innerHTML =
+      `<path d="M14 26V14h12M334 14h12v12M14 158v12h12M334 170h12v-12" fill="none" stroke="#CEDEF0" stroke-opacity=".35" stroke-width="1.5"/>` +
+      `<line x1="14" y1="152" x2="346" y2="152" stroke="#CEDEF0" stroke-opacity=".14"/>` +
+      `<circle cx="112" cy="68" r="15" fill="#CEDEF0" fill-opacity=".22"/><path d="M88 150v-40a24 24 0 0 1 48 0v40z" fill="#CEDEF0" fill-opacity=".22"/>` +
+      `<rect x="74" y="42" width="76" height="110" rx="2" fill="none" stroke="#4DA881" stroke-width="2"/><rect x="74" y="26" width="80" height="17" rx="2" fill="#4DA881"/><text x="80" y="38" fill="#102133" ${label}>person 0.94</text>` +
+      `<rect x="212" y="102" width="74" height="46" rx="4" fill="#CEDEF0" fill-opacity=".18"/><path d="M212 114h74M249 102v12" stroke="#CEDEF0" stroke-opacity=".3"/>` +
+      `<rect x="202" y="92" width="94" height="60" rx="2" fill="none" stroke="#E2AF1D" stroke-width="2"/><rect x="202" y="76" width="88" height="17" rx="2" fill="#E2AF1D"/><text x="208" y="88" fill="#102133" ${label}>package 0.88</text>` +
+      `<text x="334" y="34" text-anchor="end" font-size="10.5" fill="#CEDEF0" fill-opacity=".75">MIPI CSI-2 camera</text>`;
+    // Real-time analytics
+    let pts = [];
+    for (let x = 16; x <= 344; x += 4) {
+      let y = 114 + 9 * Math.sin(x / 9) + 6 * Math.sin(x / 3.7);
+      const d = Math.abs(x - 236);
+      if (d < 14) y = 40 + d * 5.2;
+      pts.push(x + "," + y.toFixed(1));
+    }
+    $("#art-analytics").innerHTML =
+      `<g stroke="#CEDEF0" stroke-opacity=".1"><line x1="14" y1="46" x2="346" y2="46"/><line x1="14" y1="92" x2="346" y2="92"/><line x1="14" y1="138" x2="346" y2="138"/></g>` +
+      `<line x1="14" y1="70" x2="346" y2="70" stroke="#CEDEF0" stroke-opacity=".45" stroke-dasharray="4 4"/>` +
+      `<polyline points="${pts.join(" ")}" fill="none" stroke="#568FCA" stroke-width="2" stroke-linejoin="round"/>` +
+      `<circle cx="236" cy="40" r="5" fill="#EB7114" stroke="#102133" stroke-width="2"/>` +
+      `<rect x="176" y="8" width="120" height="20" rx="10" fill="#EB7114" fill-opacity=".2" stroke="#EB7114"/><text x="236" y="22" text-anchor="middle" fill="#FFFFFF" ${label}>Anomaly: bearing 3</text>` +
+      `<text x="16" y="174" font-size="10.5" fill="#CEDEF0" fill-opacity=".75">Vibration, 16-bit ADC</text>`;
+  })();
+
+  (function kitArt() {
+    const t = (x, y, s, o = "") => `<text x="${x}" y="${y}" font-size="10" fill="#333333" text-anchor="middle" ${o}>${s}</text>`;
+    const hdr = (x, y, w, h) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="2" fill="#333333"/>`;
+    $("#kit-art").innerHTML =
+      `<rect x="8" y="8" width="504" height="324" rx="14" fill="#FFFFFF" stroke="#285483" stroke-width="2"/>` +
+      [[26,26],[494,26],[26,314],[494,314]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="6" fill="none" stroke="#B1A497" stroke-width="1.5"/>`).join("") +
+      `<rect x="214" y="112" width="96" height="96" rx="6" fill="#18324E"/><rect x="224" y="122" width="76" height="76" rx="3" fill="none" stroke="#568FCA" stroke-opacity=".6"/>` +
+      `<text x="262" y="163" font-size="15" font-weight="800" fill="#FFFFFF" text-anchor="middle">RA8P1</text><text x="262" y="180" font-size="8" fill="#CEDEF0" text-anchor="middle">R7KA8P1KFLCAC</text>` +
+      `<rect x="330" y="112" width="68" height="40" rx="3" fill="#E3E9F0" stroke="#3671B0"/>${t(364, 129, "64 MB")}${t(364, 142, "SDRAM")}` +
+      `<rect x="330" y="168" width="68" height="40" rx="3" fill="#E3E9F0" stroke="#3671B0"/>${t(364, 185, "64 MB")}${t(364, 198, "Octo-SPI Flash")}` +
+      `<rect x="424" y="8" width="76" height="60" rx="3" fill="#E0E0E0" stroke="#666666"/>${t(462, 84, "Gigabit Ethernet")}` +
+      `<rect x="8" y="78" width="30" height="18" rx="8" fill="#E0E0E0" stroke="#666666"/>${t(76, 91, "USB High-Speed")}` +
+      `<rect x="8" y="112" width="30" height="18" rx="8" fill="#E0E0E0" stroke="#666666"/>${t(68, 125, "USB Debug")}` +
+      `<rect x="62" y="150" width="62" height="40" rx="3" fill="#F2F2F2" stroke="#666666"/>${t(93, 167, "J-Link")}${t(93, 180, "On-Board")}` +
+      `<circle cx="72" cy="236" r="9" fill="#F2F2F2" stroke="#666666"/><circle cx="98" cy="236" r="9" fill="#F2F2F2" stroke="#666666"/>${t(85, 261, "PDM Mics")}` +
+      `<rect x="140" y="222" width="56" height="30" rx="3" fill="#F2F2F2" stroke="#666666"/>${t(168, 241, "Codec")}` +
+      hdr(150, 30, 180, 12) + t(240, 58, "Arduino Uno R3") +
+      hdr(62, 30, 62, 12) + t(93, 58, "Pmod") +
+      hdr(424, 112, 12, 92) + hdr(484, 112, 12, 92) + t(460, 220, "mikroBUS") +
+      hdr(214, 236, 96, 14) + t(262, 266, "Parallel RGB") +
+      hdr(40, 300, 140, 16) + t(110, 293, "Camera: CEU or MIPI CSI-2") +
+      hdr(330, 300, 140, 16) + t(400, 293, "MIPI DSI Display");
+  })();
+
+  /* ---------- System Overview: clickable block diagram ---------- */
+  const DS_LINK = DS_URL;
+  (function renderChip() {
+    const byG = {};
+    BLOCKS.forEach((b) => (byG[b.g] = byG[b.g] || []).push(b));
+    const grp = (k) => {
+      const G = GROUPS[k], list = byG[k];
+      const btns = list.map((b) =>
+        `<button type="button" class="blk${b.span ? " span" : ""}${b.big ? " big" : ""}" data-id="${b.id}" aria-pressed="false" style="--acc:${G.acc}">` +
+        `${esc(b.name)}${b.mipi ? '<span class="mipi">MIPI</span>' : ""}${b.sub ? `<small>${esc(b.sub)}</small>` : ""}</button>`).join("");
+      return `<div class="grp" style="--acc:${G.acc}"><h3>${esc(G.name)}<span>${list.length}</span></h3><div class="blocks">${btns}</div></div>`;
+    };
+    $("#chip-grid").innerHTML =
+      LAYOUT.cols.map((c) => `<div class="chip-col">${c.map(grp).join("")}</div>`).join("") +
+      `<div class="chip-bottom">${LAYOUT.bottom.map(grp).join("")}</div>`;
+  })();
+
+  function selectBlock(id, fromUser) {
+    const b = BLOCKS.find((x) => x.id === id);
+    if (!b) return;
+    const G = GROUPS[b.g];
+    $$(".blk").forEach((el) => el.setAttribute("aria-pressed", el.dataset.id === id ? "true" : "false"));
+    const figs = b.figs && b.figs.length
+      ? `<dl class="figs">${b.figs.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : "";
+    const panel = $("#so-detail");
+    panel.style.setProperty("--acc", G.acc);
+    panel.innerHTML =
+      `<button class="iconbtn close" type="button" aria-label="Close block details">${icon("x")}</button>` +
+      `<p class="dom"><i></i>${esc(G.name)}</p><h3>${esc(b.name)}</h3><p class="spec">${b.sub ? esc(b.sub) : "&nbsp;"}</p>` +
+      `<p class="desc">${esc(b.desc)}</p>${figs}${b.note ? `<p class="note">${esc(b.note)}</p>` : ""}` +
+      `<div class="acts"><a class="btn btn-secondary btn-sm" href="${DS_LINK}" target="_blank" rel="noopener">${icon("doc")}Open Datasheet</a>` +
+      `<p class="later">Links to the datasheet page for each block come in a later phase.</p></div>` +
+      `<p class="src">Source: Renesas RA8P1 block diagram and product page.<sup><a href="#src-3">3</a></sup></p>`;
+    panel.querySelector(".close").addEventListener("click", () => panel.classList.remove("sheet-open"));
+    if (fromUser && narrow()) panel.classList.add("sheet-open");
+  }
+  $("#chip-grid").addEventListener("click", (e) => {
+    const b = e.target.closest(".blk");
+    if (b) selectBlock(b.dataset.id, true);
+  });
+  selectBlock("npu", false);
+
+  /* ---------- Buy dropdown (Tom, point 1) ---------- */
+  const pop = $("#buypop");
+  let popTrigger = null;
+  function renderPop() {
+    const rows = OFFERS.slice().sort((a, b) => a.price - b.price).map((o, i) =>
+      `<tr><td><span class="dist">${esc(o.d)}</span>${i === 0 ? '<span class="low">Lowest price</span>' : ""}</td>` +
+      `<td class="r stock">${fmt(o.stock)}</td><td class="r price">${money(o.price)}</td>` +
+      `<td class="r"><a class="btn btn-primary btn-sm" href="#" data-dist="${esc(o.d)}" data-price="${o.price}" data-stock="${o.stock}" aria-label="Buy at ${esc(o.d)}">Buy ${icon("ext")}</a></td></tr>`).join("");
+    pop.innerHTML =
+      `<div class="buypop-head"><div><h4 id="buypop-title">Buy the EK-RA8P1</h4><p>RTK7EKA8P1S01001BE from authorized distributors</p></div>` +
+      `<button class="iconbtn" type="button" data-close aria-label="Close">${icon("x")}</button></div>` +
+      `<table><thead><tr><th scope="col">Distributor</th><th scope="col" class="r">Stock</th><th scope="col" class="r">Price (1)</th><th scope="col"><span class="sr-only">Buy</span></th></tr></thead><tbody>${rows}</tbody></table>` +
+      `<div class="buypop-foot"><span>You buy on the distributor's site.</span><a href="https://octopart.com/search?q=RTK7EKA8P1S01001BE" target="_blank" rel="noopener">Compare All Offers ${icon("ext")}</a></div>`;
+  }
+  function placePop() {
+    if (!popTrigger) return;
+    const r = popTrigger.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > window.innerHeight) { closePop(false); return; }
+    const w = pop.offsetWidth, h = pop.offsetHeight;
+    const left = Math.min(Math.max(12, r.left), window.innerWidth - w - 12);
+    let top = r.bottom + 8;
+    if (top + h > window.innerHeight - 12 && r.top - h - 8 > 12) top = r.top - h - 8;
+    pop.style.left = left + "px";
+    pop.style.top = Math.max(12, top) + "px";
+  }
+  function openPop(trigger) {
+    if (popTrigger === trigger) { closePop(true); return; }
+    closePop(false);
+    popTrigger = trigger;
+    renderPop();
+    pop.dataset.placement = trigger.dataset.buy;
+    pop.classList.add("open");
+    trigger.setAttribute("aria-expanded", "true");
+    placePop();
+    track("evalkit_buy_open", { placement: trigger.dataset.buy });
+    const first = pop.querySelector("a[data-dist]");
+    if (first) first.focus({ preventScroll: true });
+  }
+  function closePop(refocus) {
+    pop.classList.remove("open");
+    if (!popTrigger) return;
+    popTrigger.setAttribute("aria-expanded", "false");
+    if (refocus) popTrigger.focus({ preventScroll: true });
+    popTrigger = null;
+  }
+  document.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-buy]");
+    if (t) { e.preventDefault(); openPop(t); return; }
+    if (popTrigger && !pop.contains(e.target)) closePop(false);
+  });
+  pop.addEventListener("click", (e) => {
+    if (e.target.closest("[data-close]")) { closePop(true); return; }
+    const a = e.target.closest("a[data-dist]");
+    if (!a) return;
+    e.preventDefault();
+    const data = { distributor: a.dataset.dist, placement: pop.dataset.placement, price: +a.dataset.price, stock: +a.dataset.stock, mpn: "RTK7EKA8P1S01001BE" };
+    track("evalkit_distributor_click", data);
+    toast(`Prototype: opens ${data.distributor} to buy the EK-RA8P1. Logged evalkit_distributor_click from ${data.placement}.`);
+  });
+  window.addEventListener("scroll", () => { if (popTrigger) placePop(); }, { passive: true });
+  window.addEventListener("resize", () => { if (popTrigger) placePop(); });
+
+  /* ---------- Design In: reference design viewer (Tom, point 2) ---------- */
+  const solKeys = Object.keys(SOLUTIONS);
+  let curSol = "surv";
+  function renderTabs() {
+    $("#sol-tabs").innerHTML = solKeys.map((k) => {
+      const s = SOLUTIONS[k], on = k === curSol;
+      return `<button class="sol-tab" type="button" role="tab" id="tab-${k}" data-sol="${k}" aria-selected="${on}" aria-controls="viewer" tabindex="${on ? 0 : -1}">${esc(s.tab)}<small>${esc(s.tag)}</small></button>`;
+    }).join("");
+  }
+  function drawDiagram(s) {
+    const W = 760, BW = 178, BH = 44, RH = 56, TOP = 14, LX = 12, RX = W - 12 - BW, MX = 300, MW = 160;
+    const rows = Math.max(s.left.length, s.right.length), midH = rows * RH;
+    const yAt = (n, i) => TOP + (midH - n * RH) / 2 + i * RH + (RH - BH) / 2;
+    const mcu = { x: MX, y: TOP + (RH - BH) / 2, w: MW, h: midH - (RH - BH) };
+    const pY = TOP + midH + 44, PB = s.bottom.length, PG = 12, PW = (W - 24 - (PB - 1) * PG) / PB, PH = 46;
+    const H = pY + PH + 12, cx = MX + MW / 2, railY = pY - 18;
+    const node = (n, x, y, w, h) => {
+      const fs = n.label.length * 6.9 > w - 14 ? 11 : 12.5;
+      const cls = n.part ? "part" : "ext";
+      return `<g class="node ${cls}" data-node="${n.id}"${n.part ? ` data-part="${n.part}"` : ""} tabindex="0" role="button" aria-label="${esc(n.label)}, ${esc(n.sub)}">` +
+        `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="5"/>` +
+        `<text x="${x + w / 2}" y="${y + h / 2 - 3}" text-anchor="middle" font-size="${fs}">${esc(n.label)}</text>` +
+        `<text class="s" x="${x + w / 2}" y="${y + h / 2 + 12}" text-anchor="middle" font-size="10.5">${esc(n.sub)}</text></g>`;
+    };
+    let edges = "", nodes = "";
+    s.left.forEach((n, i) => {
+      const y = yAt(s.left.length, i), cy = y + BH / 2;
+      edges += `<path class="edge" data-for="${n.id}" d="M${LX + BW} ${cy}H${MX}"/><text class="elabel" x="${(LX + BW + MX) / 2}" y="${cy - 6}" text-anchor="middle">${esc(n.iface)}</text>`;
+      nodes += node(n, LX, y, BW, BH);
+    });
+    s.right.forEach((n, i) => {
+      const y = yAt(s.right.length, i), cy = y + BH / 2;
+      edges += `<path class="edge" data-for="${n.id}" d="M${MX + MW} ${cy}H${RX}"/><text class="elabel" x="${(MX + MW + RX) / 2}" y="${cy - 6}" text-anchor="middle">${esc(n.iface)}</text>`;
+      nodes += node(n, RX, y, BW, BH);
+    });
+    const centers = s.bottom.map((_, i) => 12 + i * (PW + PG) + PW / 2);
+    edges += `<path class="edge" d="M${cx} ${mcu.y + mcu.h}V${railY}"/><path class="edge" d="M${centers[0]} ${railY}H${centers[centers.length - 1]}"/>`;
+    centers.forEach((x, i) => { edges += `<path class="edge" data-for="${s.bottom[i].id}" d="M${x} ${railY}V${pY}"/>`; });
+    edges += `<text class="elabel" x="${cx + 8}" y="${railY - 10}">Power</text>`;
+    s.bottom.forEach((n, i) => { nodes += node(n, 12 + i * (PW + PG), pY, PW, PH); });
+    const mcuNode =
+      `<g class="node mcu" data-node="mcu" data-part="RA8P1" tabindex="0" role="button" aria-label="RA8P1 MCU, ${esc(s.mcuSub)}">` +
+      `<rect x="${mcu.x}" y="${mcu.y}" width="${mcu.w}" height="${mcu.h}" rx="8"/>` +
+      `<text class="s" x="${cx}" y="${mcu.y + 20}" text-anchor="middle" font-size="10" letter-spacing="1.5">MCU</text>` +
+      `<text x="${cx}" y="${mcu.y + mcu.h / 2 + 4}" text-anchor="middle" font-size="26" font-weight="800">RA8P1</text>` +
+      `<text class="s" x="${cx}" y="${mcu.y + mcu.h / 2 + 24}" text-anchor="middle" font-size="11">${esc(s.mcuSub)}</text></g>`;
+    const svg = $("#sol-svg");
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+    svg.setAttribute("aria-label", `${s.title} block diagram`);
+    svg.innerHTML = edges + nodes + mcuNode;
+  }
+  function renderBom(s) {
+    const shown = new Set([...s.left, ...s.right, ...s.bottom].filter((n) => n.part).map((n) => n.part).concat(["RA8P1"]));
+    const total = s.bom.reduce((a, [, q]) => a + q, 0);
+    const rows = s.bom.map(([m, q], i) => {
+      const p = P[m], vis = shown.has(m);
+      return `<li class="bom-row${vis ? "" : " off"}" data-part="${m}"><span class="idx">${i + 1}</span>` +
+        `<div><strong>${esc(m)}</strong><span class="role">${esc(p.role)}</span>${q > 1 ? `<span class="qty">×${q}</span>` : ""}` +
+        `<small>${esc(p.desc)}${vis ? "" : ". Not drawn in this view."}</small></div>` +
+        `<a class="btn btn-secondary btn-sm" href="https://octopart.com/search?q=${encodeURIComponent(p.q || m)}" target="_blank" rel="noopener" aria-label="View offers for ${esc(m)}">View Offers</a></li>`;
+    }).join("");
+    $("#bom").innerHTML =
+      `<div class="bom-head"><h3>Bill of Materials</h3><p>${s.bom.length} Renesas parts, ${total} placements. Third-party blocks are listed below.</p></div>` +
+      `<ul class="bom-list">${rows}</ul>` +
+      `<p class="bom-ext"><strong>Third-party blocks:</strong> ${esc(s.ext)}</p>` +
+      `<div class="bom-foot"><button class="btn btn-primary btn-sm" type="button" data-proto="Add Parts to BOM creates a BOM in the Octopart BOM Tool with these ${total} placements.">Add Parts to BOM</button>` +
+      `<button class="btn btn-secondary btn-sm" type="button" id="bom-csv">${icon("dl")}Export CSV</button></div>`;
+    $("#bom-csv").addEventListener("click", () => exportCsv(s));
+  }
+  function exportCsv(s) {
+    const rows = [["#", "Role", "Manufacturer", "MPN", "Description", "Qty"]];
+    s.bom.forEach(([m, q], i) => rows.push([i + 1, P[m].role, "Renesas", m, P[m].desc, q]));
+    const csv = rows.map((r) => r.map((v) => `"${String(v).replace(/"/g, '""')}"`).join(",")).join("\r\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+    a.download = `RA8P1_${curSol}_reference_design_BOM.csv`;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+    toast("Bill of materials exported as CSV.");
+  }
+  function renderViewer() {
+    const s = SOLUTIONS[curSol];
+    $("#viewer").setAttribute("aria-labelledby", "tab-" + curSol);
+    $("#viewer-bar").innerHTML =
+      `<div class="vt"><strong>${esc(s.title)}</strong><span>${esc(s.desc)}</span><br><span>${esc(s.variant)}</span></div>` +
+      `<div class="vl"><a href="https://octopart.com/solutions?rdq=ra8p1" target="_blank" rel="noopener">Open in Reference Design Viewer ${icon("ext")}</a>` +
+      `<a href="${s.url}" target="_blank" rel="noopener">View on renesas.com ${icon("ext")}</a></div>`;
+    drawDiagram(s);
+    renderBom(s);
+    $("#sel-info").textContent = "Select a block to find its part in the bill of materials.";
+  }
+  function selectSolution(k, focusTab) {
+    if (!SOLUTIONS[k]) return;
+    curSol = k;
+    renderTabs();
+    renderViewer();
+    if (focusTab) $("#tab-" + k).focus();
+  }
+  function selectNode(g) {
+    const s = SOLUTIONS[curSol], id = g.dataset.node, part = g.dataset.part;
+    $$("#sol-svg .node").forEach((n) => n.classList.toggle("on", n === g));
+    $$("#sol-svg .edge").forEach((p) => p.classList.toggle("on", p.dataset.for === id));
+    $$("#bom .bom-row").forEach((r) => r.classList.toggle("hl", !!part && r.dataset.part === part));
+    const n = id === "mcu" ? { label: "RA8P1 MCU" } : [...s.left, ...s.right, ...s.bottom].find((x) => x.id === id);
+    if (part) {
+      const row = $(`#bom .bom-row[data-part="${part}"]`);
+      if (row && !narrow()) row.scrollIntoView({ block: "nearest" });
+      $("#sel-info").textContent = `${n.label}: ${part}, highlighted in the bill of materials.`;
+    } else {
+      $("#sel-info").textContent = `${n.label}: third-party block, not in the Renesas parts list.`;
+    }
+  }
+  $("#sol-tabs").addEventListener("click", (e) => {
+    const t = e.target.closest("[data-sol]");
+    if (t) selectSolution(t.dataset.sol);
+  });
+  $("#sol-tabs").addEventListener("keydown", (e) => {
+    if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(e.key)) return;
+    e.preventDefault();
+    let i = solKeys.indexOf(curSol);
+    if (e.key === "ArrowRight") i = (i + 1) % solKeys.length;
+    if (e.key === "ArrowLeft") i = (i - 1 + solKeys.length) % solKeys.length;
+    if (e.key === "Home") i = 0;
+    if (e.key === "End") i = solKeys.length - 1;
+    selectSolution(solKeys[i], true);
+  });
+  $("#sol-svg").addEventListener("click", (e) => { const g = e.target.closest(".node"); if (g) selectNode(g); });
+  $("#sol-svg").addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const g = e.target.closest(".node");
+    if (g) { e.preventDefault(); selectNode(g); }
+  });
+  $("#bom").addEventListener("click", (e) => {
+    const r = e.target.closest(".bom-row");
+    if (!r || e.target.closest("a,button")) return;
+    const g = $(`#sol-svg .node[data-part="${r.dataset.part}"]`);
+    if (g) { selectNode(g); return; }
+    $$("#bom .bom-row").forEach((x) => x.classList.toggle("hl", x === r));
+    $$("#sol-svg .node").forEach((n) => n.classList.remove("on"));
+    $$("#sol-svg .edge").forEach((p) => p.classList.remove("on"));
+    $("#sel-info").textContent = `${r.dataset.part}: part of this design, not drawn in this view.`;
+  });
+  $$("[data-solution]").forEach((a) => a.addEventListener("click", () => selectSolution(a.dataset.solution)));
+  selectSolution("surv");
+
+  /* ---------- Source: parts table (Option B) ---------- */
+  const fstate = { stock: true, pkg: "all", mram: "all", clk: "all" };
+  const selected = new Set();
+  const maxStock = Math.max(...PARTS.map((p) => p.stock));
+  const chipIcon = `<svg viewBox="0 0 30 30" aria-hidden="true"><rect x="5" y="5" width="20" height="20" rx="3" fill="#18324E"/><rect x="9" y="9" width="12" height="12" rx="1.5" fill="none" stroke="#568FCA"/><circle cx="8.6" cy="8.6" r="1.3" fill="#CEDEF0"/></svg>`;
+  function partsShown() {
+    return PARTS.filter((p) => (!fstate.stock || p.stock > 0) &&
+      (fstate.pkg === "all" || String(p.pins) === fstate.pkg) &&
+      (fstate.mram === "all" || p.mram === fstate.mram) &&
+      (fstate.clk === "all" || p.clk === fstate.clk));
+  }
+  function renderParts() {
+    const list = partsShown();
+    $("#f-count").textContent = `${list.length} result${list.length === 1 ? "" : "s"}`;
+    $("#parts-body").innerHTML = list.length ? list.map((p) =>
+      `<tr data-mpn="${p.mpn}"><td><input type="checkbox" aria-label="Select ${p.mpn}"${selected.has(p.mpn) ? " checked" : ""}></td>` +
+      `<td><div class="partcell">${chipIcon}<div><a href="https://octopart.com/search?q=${p.mpn}" target="_blank" rel="noopener">${p.mpn}</a><small>Renesas · RA8P1</small></div></div></td>` +
+      `<td class="avail"><b>${fmt(p.stock)}</b><span class="bar"><i style="width:${Math.max(4, Math.round(100 * Math.sqrt(p.stock / maxStock)))}%"></i></span></td>` +
+      `<td>$${p.price.toFixed(3)}</td><td>LFBGA-${p.pins}<span class="dim">${p.dims}</span></td><td>${p.mram}</td><td>${p.cores}</td>` +
+      `<td class="${p.mipi ? "yes" : "no"}">${p.mipi ? "Yes" : "No"}</td><td>${p.clk}<span class="dim">${p.grade}</span></td>` +
+      `<td>${p.adc}</td><td>${p.io}</td><td>1.6 to 3.6</td>` +
+      `<td><a href="${DS_LINK}" target="_blank" rel="noopener" aria-label="Datasheet for ${p.mpn}">${icon("doc")}</a></td></tr>`).join("")
+      : `<tr><td colspan="13" style="padding:24px;color:#666666">No parts match these filters. Clear a filter to see more.</td></tr>`;
+  }
+  function renderTray() {
+    const t = $("#tray");
+    if (!selected.size) { t.classList.remove("show"); t.innerHTML = ""; return; }
+    t.classList.add("show");
+    t.innerHTML = `<p><strong>${selected.size} selected:</strong> ${[...selected].join(", ")}</p>` +
+      `<div class="acts"><button class="btn btn-secondary btn-sm" type="button" data-proto="Add to BOM adds the selected parts to a BOM in the Octopart BOM Tool.">Add to BOM</button>` +
+      `<button class="btn btn-primary btn-sm" type="button" data-proto="Compare Side by Side opens a comparison of the selected parts."${selected.size < 2 ? " disabled" : ""}>Compare Side by Side</button></div>`;
+  }
+  (function picks() {
+    const best = PARTS.reduce((a, b) => (b.stock > a.stock ? b : a));
+    const cheap = PARTS.reduce((a, b) => (b.price < a.price ? b : a));
+    const items = [
+      { k: "Best Availability", v: best.mpn, s: `${fmt(best.stock)} in stock`, mpn: best.mpn },
+      { k: "Lowest Average Price", v: cheap.mpn, s: `$${cheap.price.toFixed(3)} average`, mpn: cheap.mpn },
+      { k: "Most I/Os", v: "289-pin LFBGA", s: "208 I/Os, 12 × 12 mm", pkg: "289" },
+      { k: "Smallest Footprint", v: "224-pin LFBGA", s: "11 × 11 × 1.38 mm", pkg: "224" }
+    ];
+    $("#picks").innerHTML = items.map((it) =>
+      `<button class="pick" type="button"${it.mpn ? ` data-mpn="${it.mpn}"` : ` data-pkg="${it.pkg}"`}><span class="k">${it.k}</span><span class="v">${it.v}</span><span class="s">${it.s}</span></button>`).join("");
+    $("#picks").addEventListener("click", (e) => {
+      const b = e.target.closest(".pick");
+      if (!b) return;
+      if (b.dataset.pkg) {
+        fstate.pkg = b.dataset.pkg; $("#f-pkg").value = b.dataset.pkg; renderParts();
+        return;
+      }
+      Object.assign(fstate, { pkg: "all", mram: "all", clk: "all" });
+      ["#f-pkg", "#f-mram", "#f-clk"].forEach((s) => ($(s).value = "all"));
+      renderParts();
+      const row = $(`#parts-body tr[data-mpn="${b.dataset.mpn}"]`);
+      if (row) {
+        row.classList.add("flash");
+        row.scrollIntoView({ block: "center", behavior: "smooth" });
+        setTimeout(() => row.classList.remove("flash"), 1800);
+      }
+    });
+  })();
+  $$("#filters .fchip").forEach((c) => c.addEventListener("click", () => {
+    const on = c.getAttribute("aria-pressed") !== "true";
+    c.setAttribute("aria-pressed", on);
+    if (c.dataset.f === "stock") fstate.stock = on;
+    renderParts();
+  }));
+  $("#f-pkg").addEventListener("change", (e) => { fstate.pkg = e.target.value; renderParts(); });
+  $("#f-mram").addEventListener("change", (e) => { fstate.mram = e.target.value; renderParts(); });
+  $("#f-clk").addEventListener("change", (e) => { fstate.clk = e.target.value; renderParts(); });
+  $("#parts-body").addEventListener("change", (e) => {
+    if (e.target.type !== "checkbox") return;
+    const mpn = e.target.closest("tr").dataset.mpn;
+    e.target.checked ? selected.add(mpn) : selected.delete(mpn);
+    renderTray();
+  });
+  renderParts();
+
+  /* ---------- Resources tabs ---------- */
+  const rtabs = $$(".rtab");
+  function activateR(t, focus) {
+    rtabs.forEach((x) => {
+      const on = x === t;
+      x.setAttribute("aria-selected", on);
+      x.tabIndex = on ? 0 : -1;
+      $("#" + x.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (focus) t.focus();
+  }
+  rtabs.forEach((t, i) => {
+    t.addEventListener("click", () => activateR(t));
+    t.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") activateR(rtabs[(i + 1) % rtabs.length], true);
+      if (e.key === "ArrowLeft") activateR(rtabs[(i - 1 + rtabs.length) % rtabs.length], true);
+    });
+  });
+
+  /* ---------- Sticky bar scrollspy ---------- */
+  const spyLinks = $$(".pb-tabs a");
+  function spy() {
+    const y = window.scrollY + 120;
+    let cur = spyLinks[0].dataset.spy;
+    spyLinks.forEach((a) => { const el = document.getElementById(a.dataset.spy); if (el && el.offsetTop <= y) cur = a.dataset.spy; });
+    spyLinks.forEach((a) => a.classList.toggle("active", a.dataset.spy === cur));
+  }
+  window.addEventListener("scroll", spy, { passive: true });
+  spy();
+
+  /* ---------- Review notes ---------- */
+  const rvToggle = $("#rv-toggle"), rvPanel = $("#rv-panel");
+  function setPanel(open) { rvPanel.classList.toggle("open", open); rvPanel.setAttribute("aria-hidden", String(!open)); document.body.classList.toggle("rvp", open); }
+  function setReview(on) {
+    document.body.classList.toggle("review", on);
+    rvToggle.setAttribute("aria-pressed", String(on));
+    rvToggle.textContent = on ? "Hide Review Notes" : "Show Review Notes";
+    setPanel(on);
+  }
+  rvToggle.addEventListener("click", () => setReview(!document.body.classList.contains("review")));
+  $("#rv-open").addEventListener("click", () => setPanel(true));
+  $("#rv-close").addEventListener("click", () => setPanel(false));
+  if (location.hash === "#review") setReview(true);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (popTrigger) closePop(true);
+    if (rvPanel.classList.contains("open")) setPanel(false);
+    $("#so-detail").classList.remove("sheet-open");
+  });
+})();
+
+</script>
+</body>
+</html>
